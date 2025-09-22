@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/main/json/nestjs-goldenpath/config/application/ecs-application-config.schema.json#",
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/feat-add-goldenpath-config/json/nestjs-goldenpath/config/application/ecs-application-config.schema.json#",
   "additionalProperties": false,
   "type": "object",
   "properties": {
@@ -11,7 +11,7 @@
     "registry": {
       "oneOf": [
         {
-          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/main/json/nestjs-goldenpath/config/registry/ecr-registry.schema.json#"
+          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/feat-add-goldenpath-config/json/nestjs-goldenpath/config/registry/ecr-registry.schema.json#"
         }
       ]
     },
@@ -19,15 +19,15 @@
       "type": "object",
       "properties": {
         "default": {
-          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/main/json/nestjs-goldenpath/config/workload/ecs-config.schema.json#",
+          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/feat-add-goldenpath-config/json/nestjs-goldenpath/config/workload/ecs-config.schema.json#",
           "description": "The default ECS configuration."
         },
         "staging": {
-          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/main/json/nestjs-goldenpath/config/workload/ecs-config.schema.json#",
+          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/feat-add-goldenpath-config/json/nestjs-goldenpath/config/workload/ecs-config.schema.json#",
           "description": "The staging ECS configuration."
         },
         "production": {
-          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/main/json/nestjs-goldenpath/config/workload/ecs-config.schema.json#",
+          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/feat-add-goldenpath-config/json/nestjs-goldenpath/config/workload/ecs-config.schema.json#",
           "description": "The production ECS configuration."
         }
       },

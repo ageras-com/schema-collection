@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/main/json/nestjs-goldenpath/config/ecs-config.schema.json#",
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/feat-add-goldenpath-config/json/nestjs-goldenpath/config/ecs-config.schema.json#",
   "type": "object",
   "additionalProperties": false,
   "properties": {
