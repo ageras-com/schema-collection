@@ -15,5 +15,6 @@
       ]
     }
   ],
+  "unevaluatedProperties": false,
   "required": ["name", "description", "type", "registry"]
 }
