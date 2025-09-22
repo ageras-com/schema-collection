@@ -1,0 +1,16 @@
+{
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/feat-add-goldenpath-config/json/nestjs-goldenpath/config/config-metadata.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the application."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the application."
+    }
+  },
+  "required": ["name", "description"]
+}
