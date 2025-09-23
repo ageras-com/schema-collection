@@ -1,12 +1,12 @@
 {
-  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/feat-config-migration-group/json-schema/nestjs-goldenpath/config/registry/registry.schema.json",
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/registry/registry.schema.json",
   "type": "object",
   "description": "Configuration for the container registry.",
   "properties": {
     "registry": {
       "oneOf": [
         {
-          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/feat-config-migration-group/json-schema/nestjs-goldenpath/config/registry/ecr-registry.schema.json#"
+          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/registry/ecr-registry.schema.json#"
         }
       ]
     }
