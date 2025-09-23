@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.1.0](https://github.com/ageras-com/schema-collection/compare/v1.0.0...v1.1.0) (2025-09-23)
+
+
+### Features
+
+* add migration to golden path config schema ([ad1e19d](https://github.com/ageras-com/schema-collection/commit/ad1e19d8f49aec20d9f251e79c1aa51fa381aea0))
+* refactor registry in config schema ([ad1e19d](https://github.com/ageras-com/schema-collection/commit/ad1e19d8f49aec20d9f251e79c1aa51fa381aea0))
+* update config schema ([#4](https://github.com/ageras-com/schema-collection/issues/4)) ([41c21d8](https://github.com/ageras-com/schema-collection/commit/41c21d8d47aba5f92a09b4c6e02b0cafde4a3602))
+
 ## 1.0.0 (2025-09-23)
 
 
