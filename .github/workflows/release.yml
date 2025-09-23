@@ -1,0 +1,32 @@
+name: Schema collection release
+on:
+  push:
+    branches:
+      - main
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release-please
+        with:
+          release-type: simple
+          target-branch: main
+
+      - uses: actions/checkout@v4
+
+      - name: Tag major if release created
+        if: ${{ steps.release-please.outputs.release_created }}
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git remote add gh-token "https://${{ secrets.GITHUB_TOKEN }}@github.com/ageras-com/schema-collection.git"
+          git tag -d v${{ steps.release-please.outputs.major }} || true
+          git tag -d v${{ steps.release-please.outputs.major }}.${{ steps.release-please.outputs.minor }} || true
+          git push origin :v${{ steps.release-please.outputs.major }} || true
+          git push origin :v${{ steps.release-please.outputs.major }}.${{ steps.release-please.outputs.minor }} || true
+          git tag -a v${{ steps.release-please.outputs.major }} -m "Release v${{ steps.release-please.outputs.major }}"
+          git tag -a v${{ steps.release-please.outputs.major }}.${{ steps.release-please.outputs.minor }} -m "Release v${{ steps.release-please.outputs.major }}.${{ steps.release-please.outputs.minor }}"
+          git push origin v${{ steps.release-please.outputs.major }}
+          git push origin v${{ steps.release-please.outputs.major }}.${{ steps.release-please.outputs.minor }}
+
