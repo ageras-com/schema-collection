@@ -1,0 +1,21 @@
+# Changelog
+
+## 1.0.0 (2025-09-23)
+
+
+### Features
+
+* add docs for nestjs-goldenpath config schema ([9a22742](https://github.com/ageras-com/schema-collection/commit/9a2274233c6c7f721805beda7ec2e347e81fd8d8))
+* add nestjs goldenpath application config schema ([131e5ed](https://github.com/ageras-com/schema-collection/commit/131e5ed1ab75189ea9bd3c69dd0db6eac58c0f0b))
+* add nestjs goldenpath application config schema ([35f8ff0](https://github.com/ageras-com/schema-collection/commit/35f8ff0b977a452031233025da4a616fbf1a41dc))
+* **ci:** setup release-please ([536d4c1](https://github.com/ageras-com/schema-collection/commit/536d4c1d90ec94e3e1111d98737a35c13b6b67d3))
+* rename json folder to json-schema ([934bd51](https://github.com/ageras-com/schema-collection/commit/934bd51ad05070d495590b7412a36b3cd82f9ff0))
+* replace branch name in  with ([39475b7](https://github.com/ageras-com/schema-collection/commit/39475b7302f32e2734a5b6181b7ccec9cd1ed112))
+* replace branch name in  with ([2892a36](https://github.com/ageras-com/schema-collection/commit/2892a36570ceaf2608e823adeecd5020d2d8ce0d))
+* use unevaluatedProperties instead of additionalProperties ([eabd717](https://github.com/ageras-com/schema-collection/commit/eabd7172c5f4ac38eebae4cdfabf76006d16ae50))
+* use v1 instead of main in json-schema ([8dc0916](https://github.com/ageras-com/schema-collection/commit/8dc09169f02d4a8b519de4041fcd94e664d3d9ae))
+
+
+### Bug Fixes
+
+* wrong id in ecs-config schema ([5636ec1](https://github.com/ageras-com/schema-collection/commit/5636ec1e1ce150893458aa7fbf2b4d1f3236c742))
