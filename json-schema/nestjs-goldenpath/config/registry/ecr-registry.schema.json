@@ -1,0 +1,22 @@
+{
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/registry/ecr-registry.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "description": "The container registry where the application's Docker image is stored.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["ecr"],
+      "description": "The type of container registry."
+    },
+    "repository": {
+      "type": "string",
+      "description": "The name of the ECR repository."
+    },
+    "region": {
+      "type": "string",
+      "description": "The AWS region where the ECR repository is located."
+    }
+  },
+  "required": ["type", "repository", "region"]
+}

@@ -1,0 +1,20 @@
+{
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/config.schema.json",
+  "title": "Application Configuration Schema",
+  "description": "A schema for validating application configuration files.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/config-metadata.schema.json#"
+    },
+    {
+      "oneOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/application/ecs-application-config.schema.json#"
+        }
+      ]
+    }
+  ],
+  "unevaluatedProperties": false,
+  "required": ["name", "description", "type", "registry"]
+}

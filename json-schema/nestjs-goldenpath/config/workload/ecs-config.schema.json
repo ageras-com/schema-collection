@@ -1,0 +1,31 @@
+{
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/workload/ecs-config.schema.json#",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "arn": {
+      "type": "string",
+      "description": "The ARN of the ECS service."
+    },
+    "region": {
+      "type": "string",
+      "description": "The AWS region where the ECS service is deployed."
+    },
+    "cluster": {
+      "type": "string",
+      "description": "The name of the ECS cluster."
+    },
+    "service": {
+      "type": "string",
+      "description": "The name of the ECS service."
+    },
+    "task-definition": {
+      "type": "string",
+      "description": "The name of the ECS task definition."
+    },
+    "container-name": {
+      "type": "string",
+      "description": "The name of the container within the ECS task."
+    }
+  }
+}
