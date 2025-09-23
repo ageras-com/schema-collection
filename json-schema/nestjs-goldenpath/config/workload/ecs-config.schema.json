@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/main/json/nestjs-goldenpath/config/workload/ecs-config.schema.json#",
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/main/json-schema/nestjs-goldenpath/config/workload/ecs-config.schema.json#",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -21,7 +21,7 @@
     },
     "task-definition": {
       "type": "string",
-      "description": "The definition of the ECS task."
+      "description": "The name of the ECS task definition."
     },
     "container-name": {
       "type": "string",

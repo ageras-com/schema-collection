@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/main/json/nestjs-goldenpath/config/registry/ecr-registry.schema.json",
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/main/json-schema/nestjs-goldenpath/config/registry/ecr-registry.schema.json",
   "type": "object",
   "additionalProperties": false,
   "description": "The container registry where the application's Docker image is stored.",
