@@ -1,0 +1,22 @@
+{
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/feat-config-migration-group/json-schema/nestjs-goldenpath/config/migrations/migrations.schema.json",
+  "type": "object",
+  "properties": {
+    "migrations": {
+      "type": "object",
+      "description": "Configuration for database migrations.",
+      "properties": {
+        "group": {
+          "type": "string",
+          "description": "The migration group identifier."
+        },
+        "command": {
+          "type": "string",
+          "description": "Command to run migrations"
+        }
+      },
+      "required": ["group", "command"],
+      "additionalProperties": false
+    }
+  }
+}

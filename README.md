@@ -4,7 +4,7 @@ Home of public scheme for ageras-com organization
 
 ## Repository conventions
 
-1. The repository expects [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) so release versioning is a automated process.
+1. The repository expects [conventional commits](https://www.conventionalcommits.org/en/feat-config-migration-group.0.0/) so release versioning is a automated process.
 
 ## Automated Releases with release-please
 
