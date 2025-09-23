@@ -8,6 +8,12 @@
       "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/config-metadata.schema.json#"
     },
     {
+      "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/registry/registry.schema.json#"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/migrations/migrations.schema.json#"
+    },
+    {
       "oneOf": [
         {
           "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/application/ecs-application-config.schema.json#"
@@ -16,5 +22,5 @@
     }
   ],
   "unevaluatedProperties": false,
-  "required": ["name", "description", "type", "registry"]
+  "required": ["name", "description", "registry", "migrations", "type"]
 }

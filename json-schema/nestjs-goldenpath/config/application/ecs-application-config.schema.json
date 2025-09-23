@@ -7,13 +7,6 @@
       "enum": ["ecs"],
       "description": "The workload type of the application."
     },
-    "registry": {
-      "oneOf": [
-        {
-          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/registry/ecr-registry.schema.json#"
-        }
-      ]
-    },
     "ecs": {
       "type": "object",
       "properties": {
@@ -34,5 +27,5 @@
       "required": ["default"]
     }
   },
-  "required": ["type", "registry", "ecs"]
+  "required": ["type", "ecs"]
 }
