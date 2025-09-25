@@ -22,5 +22,5 @@
     }
   ],
   "unevaluatedProperties": false,
-  "required": ["name", "description", "registry", "migrations", "type"]
+  "required": ["name", "description", "registry", "type"]
 }
