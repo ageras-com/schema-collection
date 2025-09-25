@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/ageras-com/schema-collection/compare/v1.1.0...v1.2.0) (2025-09-25)
+
+
+### Features
+
+* add environment config for migrations db in nestjs-goldenpath config ([8cbd54d](https://github.com/ageras-com/schema-collection/commit/8cbd54d74c4e764e3dc1e27ab94e99ba9adcbddc))
+* add environment config for migrations db in nestjs-goldenpath config ([#6](https://github.com/ageras-com/schema-collection/issues/6)) ([6302c86](https://github.com/ageras-com/schema-collection/commit/6302c868366e6c60d168064cb434dd69ff3e4617))
+
 ## [1.1.0](https://github.com/ageras-com/schema-collection/compare/v1.0.0...v1.1.0) (2025-09-23)
 
 
