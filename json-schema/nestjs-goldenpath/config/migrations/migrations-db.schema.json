@@ -1,0 +1,18 @@
+{
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/feat-config-add-migrations-db-schema/json-schema/nestjs-goldenpath/config/migrations/migrations-db.schema.json",
+  "type": "object",
+  "description": "Database configuration to run migrations.",
+  "properties": {
+    "db": {
+      "type": "object",
+      "description": "Database configuration to run migrations.",
+      "oneOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/feat-config-add-migrations-db-schema/json-schema/nestjs-goldenpath/config/migrations/migrations-db-rds.schema.json#"
+        }
+      ],
+      "required": ["type","default"]
+    }
+  },
+  "required": ["db"]
+}

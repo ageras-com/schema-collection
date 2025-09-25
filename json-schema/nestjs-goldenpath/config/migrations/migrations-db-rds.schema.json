@@ -1,0 +1,63 @@
+{
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/feat-config-add-migrations-db-schema/json-schema/nestjs-goldenpath/config/migrations/migrations-db-rds.schema.json",
+  "type": "object",
+  "description": "Database configuration to run migrations.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["rds"],
+      "description": "The type of database to run migrations against."
+    },
+    "default": {
+      "$ref": "#/definitions/run-environment-config",
+      "description": "Default configuration parameters to run migration."
+    },
+    "staging": {
+      "$ref": "#/definitions/run-environment-config",
+      "description": "Staging configuration parameters to run migration."
+    },
+    "production": {
+      "$ref": "#/definitions/run-environment-config",
+      "description": "Production configuration parameters to run migration."
+    }
+  },
+  "required": ["default"],
+  "additionalProperties": false,
+  "definitions": {
+    "run-environment-config": {
+      "type": "object",
+      "description": "Per environment configuration parameters to run migration.",
+      "properties": {
+        "region": {
+          "type": "string",
+          "description": "The AWS region where the RDS instance is located."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the RDS instance."
+        },
+        "schema": {
+          "type": "string",
+          "description": "The database schema to use for migrations."
+        },
+        "username_ref": {
+          "type": "string",
+          "description": "Reference to the secret containing the database username."
+        },
+        "password_ref": {
+          "type": "string",
+          "description": "Reference to the secret containing the database password."
+        },
+        "arn": {
+          "type": "string",
+          "description": "The ARN to use to connect to the RDS instance."
+        },
+        "endpoint": {
+          "type": "string",
+          "description": "The endpoint to use to connect to the RDS instance."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

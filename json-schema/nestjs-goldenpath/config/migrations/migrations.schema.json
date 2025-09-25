@@ -1,22 +1,29 @@
 {
-  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/migrations/migrations.schema.json",
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/feat-config-add-migrations-db-schema/json-schema/nestjs-goldenpath/config/migrations/migrations.schema.json",
   "type": "object",
   "properties": {
     "migrations": {
       "type": "object",
       "description": "Configuration for database migrations.",
-      "properties": {
-        "group": {
-          "type": "string",
-          "description": "The migration group identifier."
+      "allOf": [
+        {
+          "properties": {
+            "group": {
+              "type": "string",
+              "description": "The migration group identifier."
+            },
+            "command": {
+              "type": "string",
+              "description": "Command to run migrations"
+            }
+          }
         },
-        "command": {
-          "type": "string",
-          "description": "Command to run migrations"
+        {
+          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/feat-config-add-migrations-db-schema/json-schema/nestjs-goldenpath/config/migrations/migrations-db.schema.json#"
         }
-      },
-      "required": ["group", "command"],
-      "additionalProperties": false
+      ],
+      "required": ["group", "command", "db"],
+      "unevaluatedProperties": false
     }
   }
 }
