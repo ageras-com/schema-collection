@@ -11,18 +11,13 @@
     "default": {
       "$ref": "#/definitions/run-environment-config",
       "description": "Default configuration parameters to run migration."
-    },
-    "staging": {
-      "$ref": "#/definitions/run-environment-config",
-      "description": "Staging configuration parameters to run migration."
-    },
-    "production": {
-      "$ref": "#/definitions/run-environment-config",
-      "description": "Production configuration parameters to run migration."
     }
   },
-  "required": ["default"],
-  "additionalProperties": false,
+  "additionalProperties": {
+    "$ref": "#/definitions/run-environment-config",
+    "description": "Environment specific configuration parameters to run migration."
+  },
+  "required": ["type", "default"],
   "definitions": {
     "run-environment-config": {
       "type": "object",
