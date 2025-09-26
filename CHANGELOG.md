@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.3.0](https://github.com/ageras-com/schema-collection/compare/v1.2.0...v1.3.0) (2025-09-26)
+
+
+### Features
+
+* make environments dynamic in config ([565972e](https://github.com/ageras-com/schema-collection/commit/565972ed7c1afb6b2ef3a4e07d61b1398a61d528))
+* make environments dynamic in config ([#10](https://github.com/ageras-com/schema-collection/issues/10)) ([e40c252](https://github.com/ageras-com/schema-collection/commit/e40c252f12ff94f06a199a3d28dfe23d3cce8211))
+
+
+### Bug Fixes
+
+* Update required properties in config.schema.json ([2b1d75a](https://github.com/ageras-com/schema-collection/commit/2b1d75a9017f327f52c93bce4dded7bdb86fd177))
+* Update required properties in config.schema.json ([#8](https://github.com/ageras-com/schema-collection/issues/8)) ([d8939d6](https://github.com/ageras-com/schema-collection/commit/d8939d6b8bd388b25db2e82947bc5be7412db040))
+
 ## [1.2.0](https://github.com/ageras-com/schema-collection/compare/v1.1.0...v1.2.0) (2025-09-25)
 
 
