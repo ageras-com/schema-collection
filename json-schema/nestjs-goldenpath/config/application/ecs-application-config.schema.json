@@ -15,8 +15,7 @@
           "description": "The environment ECS configuration that overrides the default configuration."
         }
       },
-      "minProperties": 1,
-      "unevaluatedProperties": false
+      "minProperties": 1
     }
   },
   "required": ["type", "ecs"]
