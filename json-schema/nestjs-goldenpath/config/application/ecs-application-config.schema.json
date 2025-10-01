@@ -9,28 +9,14 @@
     },
     "ecs": {
       "type": "object",
-      "allOf": [
-        {
-          "type": "object",
-          "properties": {
-            "default": {
-              "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/workload/ecs-config.schema.json#",
-              "description": "The default ECS configuration."
-            }
-          }
-        },
-        {
-          "type": "object",
-          "patternProperties": {
-            "^[_a-zA-Z][a-zA-Z0-9_-]*$": {
-              "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/workload/ecs-config.schema.json#",
-              "description": "The environment ECS configuration that overrides the default configuration."
-            }
-          }
+      "patternProperties": {
+        "^(default)[_a-zA-Z][a-zA-Z0-9_-]*$": {
+          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/workload/ecs-config.schema.json#",
+          "description": "The environment ECS configuration that overrides the default configuration."
         }
-      ],
-      "unevaluatedProperties": false,
-      "required": ["default"]
+      },
+      "minProperties": 1,
+      "unevaluatedProperties": false
     }
   },
   "required": ["type", "ecs"]
