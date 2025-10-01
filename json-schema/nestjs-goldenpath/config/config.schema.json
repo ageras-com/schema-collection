@@ -28,5 +28,5 @@
     }
   ],
   "unevaluatedProperties": false,
-  "required": ["name", "description", "environments", "registry", "type"]
+  "required": ["name", "description", "environments", "type"]
 }
