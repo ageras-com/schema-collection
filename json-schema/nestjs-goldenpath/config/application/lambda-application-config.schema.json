@@ -1,0 +1,37 @@
+{
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/application/lambda-application-config.schema.json#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["lambda"],
+      "description": "The workload type of the application."
+    },
+    "lambda": {
+      "type": "object",
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "default": {
+              "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/workload/lambda-config.schema.json#",
+              "description": "The default Lambda configuration."
+            }
+          }
+        },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^[_a-zA-Z][a-zA-Z0-9_-]*$": {
+              "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/workload/lambda-config.schema.json#",
+              "description": "The environment Lambda configuration that overrides the default configuration."
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false,
+      "required": ["default"]
+    }
+  },
+  "required": ["type", "lambda"]
+}
