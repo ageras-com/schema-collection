@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.4.0](https://github.com/ageras-com/schema-collection/compare/v1.3.0...v1.4.0) (2025-10-01)
+
+
+### Features
+
+* add lambda application deploy schema to nestjs-golden-path ([69de775](https://github.com/ageras-com/schema-collection/commit/69de775c99ca062e5350b65f59c4947731eaca2c))
+* add lambda application deploy schema to nestjs-golden-path ([#11](https://github.com/ageras-com/schema-collection/issues/11)) ([0447a6b](https://github.com/ageras-com/schema-collection/commit/0447a6b8995e39109dbf0f213afe964103325b63))
+* only keep arn, region and name for lambda deploy config ([923aeb6](https://github.com/ageras-com/schema-collection/commit/923aeb6b2c28d33b1134d88c1f76d2a271d11d8e))
+* remove requirement of default application config for ECS and lambda ([e213e18](https://github.com/ageras-com/schema-collection/commit/e213e186ecdc83922f24e832d68698eba6a06d84))
+
 ## [1.3.0](https://github.com/ageras-com/schema-collection/compare/v1.2.0...v1.3.0) (2025-09-26)
 
 
