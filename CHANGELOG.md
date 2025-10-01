@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.1](https://github.com/ageras-com/schema-collection/compare/v1.4.0...v1.4.1) (2025-10-01)
+
+
+### Bug Fixes
+
+* required properties for application config schema ([5e1ffb1](https://github.com/ageras-com/schema-collection/commit/5e1ffb1b5819fd0c84c8b37c761415d8867b03e5))
+* required properties for application config schema ([#13](https://github.com/ageras-com/schema-collection/issues/13)) ([1bcc537](https://github.com/ageras-com/schema-collection/commit/1bcc537331be40d2d493e2513ab937c74c0efe59))
+
 ## [1.4.0](https://github.com/ageras-com/schema-collection/compare/v1.3.0...v1.4.0) (2025-10-01)
 
 
