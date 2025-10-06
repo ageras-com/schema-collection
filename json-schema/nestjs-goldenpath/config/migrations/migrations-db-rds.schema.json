@@ -35,6 +35,10 @@
           "type": "string",
           "description": "The database schema to use for migrations."
         },
+        "port": {
+          "type": "number",
+          "description": "The database port to use for migrations."
+        },
         "username_ref": {
           "type": "string",
           "description": "Reference to the secret containing the database username."
