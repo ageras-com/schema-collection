@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.0](https://github.com/ageras-com/schema-collection/compare/v1.4.1...v1.5.0) (2025-10-06)
+
+
+### Features
+
+* add port in migrations-db-rds schema ([bf61d8c](https://github.com/ageras-com/schema-collection/commit/bf61d8ccd1c5f5e17ed5c8d67e8a2342273b8abc))
+* add port in migrations-db-rds schema ([#16](https://github.com/ageras-com/schema-collection/issues/16)) ([55267e2](https://github.com/ageras-com/schema-collection/commit/55267e29517b28be5771bd2c2ff9c185491d8146))
+
 ## [1.4.1](https://github.com/ageras-com/schema-collection/compare/v1.4.0...v1.4.1) (2025-10-01)
 
 
