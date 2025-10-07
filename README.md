@@ -20,6 +20,6 @@ git commit --allow-empty -m "chore: release 6.1.1" -m "Release-As: v6.1.1"
 
 ### json scheme
 
-#### NestJS golden path
+#### Golden path
 
-- [config](json-schema/nestjs-goldenpath/config/README.md) - Configuration schema for NestJS golden path
+- [config](json-schema/golden-path/config/README.md) - Configuration schema for golden path

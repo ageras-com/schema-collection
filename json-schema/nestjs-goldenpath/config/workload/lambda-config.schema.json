@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/workload/lambda-config.schema.json#",
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/golden-path/config/workload/lambda-config.schema.json#",
   "type": "object",
   "additionalProperties": false,
   "properties": {
