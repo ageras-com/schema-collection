@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.1](https://github.com/ageras-com/schema-collection/compare/v1.6.0...v1.6.1) (2025-10-07)
+
+
+### Bug Fixes
+
+* update golden-path folder name ([ecd55ac](https://github.com/ageras-com/schema-collection/commit/ecd55ac11a0c77ee2a5b29c9467bff5f5f50ad8c))
+* update golden-path folder name ([#20](https://github.com/ageras-com/schema-collection/issues/20)) ([9b818f0](https://github.com/ageras-com/schema-collection/commit/9b818f099e26df4f4e393a2c5bb0f1faa3cced92))
+
 ## [1.6.0](https://github.com/ageras-com/schema-collection/compare/v1.5.0...v1.6.0) (2025-10-07)
 
 
