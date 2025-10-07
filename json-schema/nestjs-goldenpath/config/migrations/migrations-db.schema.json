@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/migrations/migrations-db.schema.json",
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/golden-path/config/migrations/migrations-db.schema.json",
   "type": "object",
   "description": "Database configuration to run migrations.",
   "properties": {
@@ -8,7 +8,7 @@
       "description": "Database configuration to run migrations.",
       "oneOf": [
         {
-          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/nestjs-goldenpath/config/migrations/migrations-db-rds.schema.json#"
+          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/golden-path/config/migrations/migrations-db-rds.schema.json#"
         }
       ],
       "required": ["type","default"]

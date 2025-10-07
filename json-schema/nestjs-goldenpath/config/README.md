@@ -1,4 +1,4 @@
-# Nestjs golden path config
+# Golden path config
 
 Validates configuration files following this pattern:
 
