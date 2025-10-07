@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.0](https://github.com/ageras-com/schema-collection/compare/v1.5.0...v1.6.0) (2025-10-07)
+
+
+### Features
+
+* rename nestjs-goldenpath to golden-path ([888ce24](https://github.com/ageras-com/schema-collection/commit/888ce24cbf0ccbeb77845e1df9779fc1f97c405d))
+* rename nestjs-goldenpath to golden-path ([#18](https://github.com/ageras-com/schema-collection/issues/18)) ([8484bff](https://github.com/ageras-com/schema-collection/commit/8484bff556ec8f3ea3baa6508e964ae82bfed521))
+
 ## [1.5.0](https://github.com/ageras-com/schema-collection/compare/v1.4.1...v1.5.0) (2025-10-06)
 
 
