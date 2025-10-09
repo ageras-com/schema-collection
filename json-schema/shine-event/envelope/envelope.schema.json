@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Shine Event Envelope",
+  "description": "Envelope schema for Shine events. The envelope provides standardized event metadata in the 'event' property, while the actual message content is contained in 'metadata' and 'data' properties.",
+  "required": [
+    "event",
+    "metadata",
+    "data"
+  ],
+  "properties": {
+    "event": {
+      "type": "object",
+      "description": "Event metadata",
+      "required": [
+        "source",
+        "type",
+        "sourceMessageId"
+      ],
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "Source system identifier"
+        },
+        "type": {
+          "type": "string",
+          "description": "Event type identifier"
+        },
+        "sourceMessageId": {
+          "type": "string",
+          "description": "Original message ID from source"
+        },
+        "time": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Event timestamp in RFC 3339 format"
+        },
+        "partitionKey": {
+          "type": "string",
+          "description": "Optional partition key for ordering"
+        },
+        "correlationId": {
+          "type": "string",
+          "description": "Optional correlation ID for tracing"
+        },
+        "subject": {
+          "type": "string",
+          "description": "Identifies the subject of the event in the context of the event producer (e.g., 'account/a1b2c3d4', 'transaction/xyz123')"
+        },
+        "dataschema": {
+          "type": "string",
+          "format": "uri",
+          "description": "URI identifying the schema that data adheres to"
+        },
+        "specversion": {
+          "type": "string",
+          "description": "Version of the Shine Event Envelope specification",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        }
+      },
+      "additionalProperties": false,
+      "patternProperties": {
+        "^_": {
+          "description": "Additional non-essential properties with underscore prefix",
+          "examples": [
+            "`_epoch` for AWS EventBridge direct integrations"
+          ]
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional metadata"
+    },
+    "data": {
+      "type": "object",
+      "description": "Event payload data"
+    }
+  },
+  "additionalProperties": false
+}
