@@ -47,7 +47,7 @@
           "type": "string",
           "description": "Identifies the subject of the event in the context of the event producer (e.g., 'account/a1b2c3d4', 'transaction/xyz123')"
         },
-        "dataschema": {
+        "schema": {
           "type": "string",
           "format": "uri",
           "description": "URI identifying the schema that data adheres to"

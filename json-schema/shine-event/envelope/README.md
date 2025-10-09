@@ -30,7 +30,7 @@ The envelope uses the `event` property for standardized routing and observabilit
     "subject": "<entity>/<id>",
     "correlationId": "trace-id",
     "partitionKey": "optional-key",
-    "dataschema": "https://schemas.shine.com/v1/entity",
+    "schema": "https://schemas.shine.com/v1/entity",
     "specversion": "1.0.0"
   },
   "metadata": {
@@ -61,7 +61,7 @@ The envelope uses the `event` property for standardized routing and observabilit
 - **`subject`** (string): Identifies the subject of the event within the producer context
   - Examples: `account/a1b2c3d4`, `transaction/xyz123`
   - Useful for entity-specific routing and filtering
-- **`dataschema`** (string, URI format): URI pointing to the schema definition for the event data
+- **`schema`** (string, URI format): URI pointing to the schema definition for the event data
   - Example: `https://schemas.shine.com/v1/bank-account`
 - **`specversion`** (string): Version of this Shine Event Envelope specification
   - Format: semantic versioning (e.g., `1.0.0`)
