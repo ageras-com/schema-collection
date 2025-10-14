@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.7.0](https://github.com/ageras-com/schema-collection/compare/v1.6.1...v1.7.0) (2025-10-14)
+
+
+### Features
+
+* event-schema-registry ([7049d37](https://github.com/ageras-com/schema-collection/commit/7049d370627ff9a294f833fdc6bcfb2d86c9021f))
+* event-schema-registry ([#23](https://github.com/ageras-com/schema-collection/issues/23)) ([d126f10](https://github.com/ageras-com/schema-collection/commit/d126f10c81512948decbe0471209806dbd6e4836))
+
+
+### Bug Fixes
+
+* required ([c4720b3](https://github.com/ageras-com/schema-collection/commit/c4720b32adda3f3c215838c89b3d7c6d26da4232))
+* resuable defs ([0d7bafe](https://github.com/ageras-com/schema-collection/commit/0d7bafeb1be4ef2f150c69ac2ae7ad568889ce4f))
+
 ## [1.6.1](https://github.com/ageras-com/schema-collection/compare/v1.6.0...v1.6.1) (2025-10-07)
 
 
