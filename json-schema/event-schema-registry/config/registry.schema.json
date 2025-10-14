@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["messageType", "version", "schema"],
+        "properties": {
+          "messageType": {
+            "type": "string",
+            "pattern": "^[A-Z][a-zA-Z0-9]*$",
+            "description": "PascalCase message type identifier"
+          },
+          "version": {
+            "type": "string",
+            "pattern": "^v[0-9]+$",
+            "description": "Version in format v1, v2, etc."
+          },
+          "schema": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+\\.schema\\.json$",
+            "description": "Schema filename in kebab-case"
+          },
+          "description": {
+            "type": "string",
+            "description": "Human-readable description of the event"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "envelopes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "version", "schema"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[A-Z][a-zA-Z0-9]*$",
+            "description": "PascalCase envelope name"
+          },
+          "version": {
+            "type": "string",
+            "pattern": "^v[0-9]+$",
+            "description": "Version in format v1, v2, etc."
+          },
+          "schema": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+\\.schema\\.json$",
+            "description": "Schema filename in kebab-case"
+          },
+          "description": {
+            "type": "string",
+            "description": "Human-readable description of the envelope"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
