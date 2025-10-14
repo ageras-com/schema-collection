@@ -76,8 +76,7 @@
         "type": "object",
         "required": [
           "name",
-          "version",
-          "schema"
+          "schemaName"
         ],
         "properties": {
           "name": {
