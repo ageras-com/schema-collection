@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "definitions": {
+    "pascalCaseIdentifier": {
+      "type": "string",
+      "pattern": "^[A-Z][a-zA-Z0-9]*$",
+      "description": "PascalCase identifier"
+    },
+    "schemaName": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9-]+(?!.*.schema.json$)",
+      "description": "Kebab-case prefix for schema filenames (should not end with vx.schema.json)"
+    },
+    "descriptionString": {
+      "type": "string",
+      "description": "Human-readable description"
+    },
+    "compatibilityMode": {
+      "type": "string",
+      "enum": [
+        "forward",
+        "none"
+      ],
+      "default": "forward",
+      "description": "Schema compatibility mode"
+    }
+  },
+  "properties": {
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "messageType",
+          "schemaName"
+        ],
+        "properties": {
+          "messageType": {
+            "$ref": "#/definitions/pascalCaseIdentifier",
+            "description": "PascalCase message type identifier",
+            "examples": [
+              "OrderCreated",
+              "UserUpdated",
+              "PaymentProcessed",
+              "ProcessPayment"
+            ]
+          },
+          "description": {
+            "$ref": "#/definitions/descriptionString",
+            "description": "Human-readable description of the event",
+            "examples": [
+              "Event triggered when an order is created",
+              "Event for user updates"
+            ]
+          },
+          "schemaName": {
+            "$ref": "#/definitions/schemaName",
+            "examples": [
+              "order-created",
+              "user-updated",
+              "payment-processed",
+              "inventory-checked"
+            ]
+          },
+          "compatibility": {
+            "$ref": "#/definitions/compatibilityMode"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "envelopes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "schemaName"
+        ],
+        "properties": {
+          "name": {
+            "$ref": "#/definitions/pascalCaseIdentifier",
+            "description": "PascalCase envelope name"
+          },
+          "schemaName": {
+            "$ref": "#/definitions/schemaName"
+          },
+          "description": {
+            "$ref": "#/definitions/descriptionString",
+            "description": "Human-readable description of the envelope"
+          },
+          "compatibility": {
+            "$ref": "#/definitions/compatibilityMode"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
