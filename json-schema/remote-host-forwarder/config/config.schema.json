@@ -1,0 +1,32 @@
+{
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/remote-host-forwarder/config/config.schema.json",
+  "title": "Remote Host Forwarder Configuration Schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "arn": {
+      "type": "string",
+      "pattern": "^arn:aws:iam::[0-9]{12}:role/[a-zA-Z0-9-_]+$",
+      "description": "ARN used to establish SSM connection for tunneling"
+    },
+    "endpoint": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+      "description": "Database endpoint hostname"
+    },
+    "port": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 65535,
+      "description": "Database port number"
+    },
+    "localPort": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 65535,
+      "description": "Optional local port for tunneling"
+    }
+  },
+  "required": ["arn", "endpoint", "port"],
+  "additionalProperties": false
+}
