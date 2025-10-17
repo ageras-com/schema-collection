@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.8.0](https://github.com/ageras-com/schema-collection/compare/v1.7.0...v1.8.0) (2025-10-17)
+
+
+### Features
+
+* remote-host-fowarder public schema ([3b03c63](https://github.com/ageras-com/schema-collection/commit/3b03c6308de47e0dc50baa2e8bfbcb4bf1398b66))
+* remote-host-fowarder public schema ([#25](https://github.com/ageras-com/schema-collection/issues/25)) ([a831f6a](https://github.com/ageras-com/schema-collection/commit/a831f6a30d49c5d78d11f7b6edff4ae0d6f69bce))
+
 ## [1.7.0](https://github.com/ageras-com/schema-collection/compare/v1.6.1...v1.7.0) (2025-10-14)
 
 
