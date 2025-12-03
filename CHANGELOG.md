@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.9.0](https://github.com/ageras-com/schema-collection/compare/v1.8.0...v1.9.0) (2025-12-03)
+
+
+### Features
+
+* docker config ([691693e](https://github.com/ageras-com/schema-collection/commit/691693edb9d161b996210eb1777ea3d6be0cff73))
+* docker config ([#27](https://github.com/ageras-com/schema-collection/issues/27)) ([567674f](https://github.com/ageras-com/schema-collection/commit/567674f82df19b3a829aa8d3703b38c30aa4f3a6))
+
+
+### Bug Fixes
+
+* docker offset 🫠 ([ac886a0](https://github.com/ageras-com/schema-collection/commit/ac886a026dc187a9531ca70d81b61661d492d929))
+* docker refs ([f86fc00](https://github.com/ageras-com/schema-collection/commit/f86fc00f6627dc542c7989d7787a58ed5f9f06f6))
+* move to root ([262994c](https://github.com/ageras-com/schema-collection/commit/262994c36682e7eac8dbc0692047d4d49520f323))
+* ref ([1a90fc7](https://github.com/ageras-com/schema-collection/commit/1a90fc71b2168e67fdd1e9c73344034c940abec3))
+* ref ([5ed23e0](https://github.com/ageras-com/schema-collection/commit/5ed23e03c61d9722fb047cab5be15c45a1f8515f))
+* ref ([31d72ac](https://github.com/ageras-com/schema-collection/commit/31d72ac5d95bcd55a5943302d75f52d93abea8b2))
+* simplify ([85cc78a](https://github.com/ageras-com/schema-collection/commit/85cc78a5e65d5f081af06e4fc179baec753ffa9c))
+* v1 ref ([27fc1f7](https://github.com/ageras-com/schema-collection/commit/27fc1f7d127d32c53a090b826acface0a135cc7d))
+
 ## [1.8.0](https://github.com/ageras-com/schema-collection/compare/v1.7.0...v1.8.0) (2025-10-17)
 
 
