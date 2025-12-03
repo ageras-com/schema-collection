@@ -6,13 +6,7 @@
     "docker": {
       "type": "object",
       "description": "Docker build configurations for different environments.",
-      "patternProperties": {
-        "^(default)[_a-zA-Z][a-zA-Z0-9_-]*$": {
-          "$ref": "#/definitions/docker-environment-config",
-          "description": "The environment ECS configuration that overrides the default configuration."
-        }
-      },
-      "minProperties": 1
+      "$ref": "#/definitions/docker-environment-config"
     }
   },
   "definitions": {

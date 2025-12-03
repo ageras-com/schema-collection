@@ -4,12 +4,21 @@
   "description": "Configuration for the container registry.",
   "properties": {
     "registry": {
-      "oneOf": [
+      "allOf": [
         {
-          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/golden-path/config/registry/ecr-registry.schema.json#"
+          "oneOf": [
+            {
+              "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/golden-path/config/registry/ecr-registry.schema.json#"
+            }
+          ]
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/feat/docker-config/json-schema/golden-path/config/docker/docker.schema.json#"
         }
       ]
     }
   },
-  "required": ["registry"]
+  "required": [
+    "registry"
+  ]
 }
