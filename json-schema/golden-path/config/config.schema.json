@@ -14,6 +14,9 @@
       "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/feat/docker-config/json-schema/golden-path/config/registry/registry.schema.json#"
     },
     {
+      "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/feat/docker-config/json-schema/golden-path/config/docker/docker.schema.json#"
+    },
+    {
       "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/golden-path/config/migrations/migrations.schema.json#"
     },
     {
