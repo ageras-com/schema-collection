@@ -6,11 +6,11 @@
     "docker": {
       "type": "object",
       "description": "Docker build configurations for different environments.",
-      "$ref": "#/definitions/docker-environment-config"
+      "$ref": "#/definitions/docker-config"
     }
   },
   "definitions": {
-    "docker-environment-config": {
+    "docker-config": {
       "type": "object",
       "description": "Docker build configuration for a specific environment.",
       "properties": {
