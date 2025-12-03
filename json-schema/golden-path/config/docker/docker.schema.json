@@ -2,13 +2,19 @@
   "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/golden-path/config/docker/docker.schema.json",
   "type": "object",
   "description": "Configuration for Docker build settings per environment.",
-  "patternProperties": {
-    "^(default)[_a-zA-Z][a-zA-Z0-9_-]*$": {
-      "$ref": "#/definitions/docker-environment-config",
-      "description": "The environment ECS configuration that overrides the default configuration."
+  "properties": {
+    "docker": {
+      "type": "object",
+      "description": "Docker build configurations for different environments.",
+      "patternProperties": {
+        "^(default)[_a-zA-Z][a-zA-Z0-9_-]*$": {
+          "$ref": "#/definitions/docker-environment-config",
+          "description": "The environment ECS configuration that overrides the default configuration."
+        }
+      },
+      "minProperties": 1
     }
   },
-  "minProperties": 1,
   "definitions": {
     "docker-environment-config": {
       "type": "object",
