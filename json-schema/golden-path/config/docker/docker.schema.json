@@ -1,18 +1,11 @@
 {
-  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/golden-path/config/docker/docker.schema.json",
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/feat/docker-config/json-schema/golden-path/config/docker/docker.schema.json",
   "type": "object",
-  "description": "Configuration for Docker build settings per environment.",
+  "description": "Configuration for Docker build settings.",
   "properties": {
     "docker": {
       "type": "object",
-      "description": "Docker build configurations for different environments.",
-      "$ref": "#/definitions/docker-config"
-    }
-  },
-  "definitions": {
-    "docker-config": {
-      "type": "object",
-      "description": "Docker build configuration for a specific environment.",
+      "description": "Docker build configurations.",
       "properties": {
         "context": {
           "type": "string",

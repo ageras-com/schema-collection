@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/golden-path/config/registry/registry.schema.json",
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/feat/docker-config/json-schema/golden-path/config/registry/registry.schema.json",
   "type": "object",
   "description": "Configuration for the container registry.",
   "properties": {
