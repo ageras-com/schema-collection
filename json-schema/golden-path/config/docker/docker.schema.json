@@ -1,0 +1,26 @@
+{
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/golden-path/config/docker/docker.schema.json",
+  "type": "object",
+  "description": "Configuration for Docker build settings.",
+  "properties": {
+    "docker": {
+      "type": "object",
+      "description": "Docker build configurations.",
+      "properties": {
+        "context": {
+          "type": "string",
+          "description": "Specifies the working directory for the Docker build command."
+        },
+        "file": {
+          "type": "string",
+          "description": "Specifies the name of the Dockerfile to use for the build."
+        },
+        "target": {
+          "type": "string",
+          "description": "Sets the target build stage to build in a multi-stage Dockerfile."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -11,5 +11,7 @@
       ]
     }
   },
-  "required": ["registry"]
+  "required": [
+    "registry"
+  ]
 }
