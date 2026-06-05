@@ -74,11 +74,11 @@ metadata:
   owner: payments-team
   contacts:
     - type: slack
-      contact: https://ageras.slack.com/archives/C0123PAYMENTS
+      contact: https://shine.slack.com/archives/C0123PAYMENTS
   links:
     - name: Runbook
       type: runbook
-      url: https://wiki.ageras.com/payments-api
+      url: https://wiki.shine.com/payments-api
 spec:
   lifecycle: production
   tier: '1'
