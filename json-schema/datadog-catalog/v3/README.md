@@ -1,18 +1,18 @@
-# Datadog Service Catalog v3 — Ageras schema
+# Datadog Service Catalog v3 — Shine schema
 
-Validates `catalog-info.yaml` files for Datadog Service Catalog v3 entries, narrowing the upstream schema to Ageras-approved values.
+Validates `catalog-info.yaml` files for Datadog Service Catalog v3 entries, narrowing the upstream schema to Shine-approved values.
 
 ## Schema files
 
 Pick the schema matching the entity's `kind`. Each extends the upstream Datadog schema for that kind via `allOf` and adds org-specific enum constraints.
 
-| File | `kind` | Purpose |
-|---|---|---|
-| `service.schema.json` | `service` | Narrows service-specific fields (`type`, `languages`) plus the shared conventions below. |
-| `system.schema.json` | `system` | Narrows the shared conventions (lifecycle, tier, contact/link types). |
-| `datastore.schema.json` | `datastore` | Narrows the shared conventions. Lifecycle/tier usually arrive via `inheritFrom`, so the enums only bite when set explicitly. |
-| `queue.schema.json` | `queue` | Narrows the shared conventions. Same `inheritFrom` note as datastore. |
-| `vendor/` | — | Local copies of all Datadog sub-schemas (including `system`/`datastore`/`queue`), mirrored from upstream for offline use or auditing. |
+| File                    | `kind`      | Purpose                                                                                                                               |
+| ----------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `service.schema.json`   | `service`   | Narrows service-specific fields (`type`, `languages`) plus the shared conventions below.                                              |
+| `system.schema.json`    | `system`    | Narrows the shared conventions (lifecycle, tier, contact/link types).                                                                 |
+| `datastore.schema.json` | `datastore` | Narrows the shared conventions. Lifecycle/tier usually arrive via `inheritFrom`, so the enums only bite when set explicitly.          |
+| `queue.schema.json`     | `queue`     | Narrows the shared conventions. Same `inheritFrom` note as datastore.                                                                 |
+| `vendor/`               | —           | Local copies of all Datadog sub-schemas (including `system`/`datastore`/`queue`), mirrored from upstream for offline use or auditing. |
 
 A `service.datadog.yaml` holds a single `service` entity. A root `entity.datadog.yaml` may hold multiple documents (one `system`, plus its `datastore`/`queue` peers) — validate each document against the schema for its `kind`.
 
@@ -22,18 +22,18 @@ The following fields are constrained from free strings to organisation-approved 
 
 **Shared across all kinds:**
 
-| Field | Allowed values |
-|---|---|
-| `spec.lifecycle` | `experimental`, `production`, `deprecated` (maturity, **not** deployment environment) |
-| `spec.tier` | `1`, `2`, `3`, `4` (house criticality tier, 1 = highest) |
-| `metadata.contacts[].type` | `email`, `slack`, `microsoft-teams`, `pagerduty` |
-| `metadata.links[].type` | `runbook`, `doc`, `repo`, `dashboard`, `other` |
+| Field                      | Allowed values                                                                        |
+| -------------------------- | ------------------------------------------------------------------------------------- |
+| `spec.lifecycle`           | `experimental`, `production`, `deprecated` (maturity, **not** deployment environment) |
+| `spec.tier`                | `1`, `2`, `3`, `4` (house criticality tier, 1 = highest)                              |
+| `metadata.contacts[].type` | `email`, `slack`, `microsoft-teams`, `pagerduty`                                      |
+| `metadata.links[].type`    | `runbook`, `doc`, `repo`, `dashboard`, `other`                                        |
 
 **`service` only:**
 
-| Field | Allowed values |
-|---|---|
-| `spec.type` | `web`, `grpc`, `worker`, `scheduled-job`, `function`, `library` |
+| Field              | Allowed values                                                      |
+| ------------------ | ------------------------------------------------------------------- |
+| `spec.type`        | `web`, `grpc`, `worker`, `scheduled-job`, `function`, `library`     |
 | `spec.languages[]` | `dotnet`, `go`, `java`, `js`, `typescript`, `php`, `python`, `ruby` |
 
 The open `spec.type` of `system`/`datastore`/`queue` (e.g. `internal`, `postgres`, `redis`, `sqs`) is left to upstream validation — it is not constrained here.
@@ -53,7 +53,7 @@ To add or remove values, edit the `enum` arrays in the relevant schema file.
 }
 ```
 
-The upstream schema handles all structural validation (required fields, types, formats). The second member narrows specific fields. Both must pass — so values must satisfy the upstream constraints _and_ be in the Ageras-approved enum.
+The upstream schema handles all structural validation (required fields, types, formats). The second member narrows specific fields. Both must pass — so values must satisfy the upstream constraints _and_ be in the Shine-approved enum.
 
 ## Upstream schema URL
 

@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/datadog-catalog/v3/service.schema.json",
-  "title": "Datadog Service Catalog Schema - Ageras",
-  "description": "Ageras-specific narrowing of the Datadog v3 service catalog schema. Restricts open string fields to organisation-approved enum values while delegating all structural validation to the upstream schema.",
+  "title": "Datadog Service Catalog Schema - Shine",
+  "description": "Shine-specific narrowing of the Datadog v3 service catalog schema. Restricts open string fields to organisation-approved enum values while delegating all structural validation to the upstream schema.",
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/DataDog/schema/main/service-catalog/v3/service.schema.json"
@@ -15,20 +15,45 @@
           "properties": {
             "lifecycle": {
               "description": "The lifecycle state of the service.",
-              "enum": ["experimental", "production", "deprecated"]
+              "enum": [
+                "experimental",
+                "production",
+                "deprecated"
+              ]
             },
             "tier": {
               "description": "House criticality tier (1=highest).",
-              "enum": ["1", "2", "3", "4"]
+              "enum": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
             },
             "type": {
               "description": "The type of service.",
-              "enum": ["web", "grpc", "worker", "scheduled-job", "function", "library"]
+              "enum": [
+                "web",
+                "grpc",
+                "worker",
+                "scheduled-job",
+                "function",
+                "library"
+              ]
             },
             "languages": {
               "description": "Programming languages used in the service.",
               "items": {
-                "enum": ["dotnet", "go", "java", "js", "typescript", "php", "python", "ruby"]
+                "enum": [
+                  "dotnet",
+                  "go",
+                  "java",
+                  "js",
+                  "typescript",
+                  "php",
+                  "python",
+                  "ruby"
+                ]
               }
             }
           }
@@ -41,7 +66,12 @@
                 "properties": {
                   "type": {
                     "description": "Contact channel type.",
-                    "enum": ["email", "slack", "microsoft-teams", "pagerduty"]
+                    "enum": [
+                      "email",
+                      "slack",
+                      "microsoft-teams",
+                      "pagerduty"
+                    ]
                   }
                 }
               }
@@ -51,7 +81,13 @@
                 "properties": {
                   "type": {
                     "description": "Link category.",
-                    "enum": ["runbook", "doc", "repo", "dashboard", "other"]
+                    "enum": [
+                      "runbook",
+                      "doc",
+                      "repo",
+                      "dashboard",
+                      "other"
+                    ]
                   }
                 }
               }

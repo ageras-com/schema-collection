@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/datadog-catalog/v3/system.schema.json",
-  "title": "Datadog System Catalog Schema - Ageras",
-  "description": "Ageras-specific narrowing of the Datadog v3 system catalog schema. Restricts lifecycle, tier, and contact/link channel types to organisation-approved enum values while delegating all structural validation to the upstream schema.",
+  "title": "Datadog System Catalog Schema - Shine",
+  "description": "Shine-specific narrowing of the Datadog v3 system catalog schema. Restricts lifecycle, tier, and contact/link channel types to organisation-approved enum values while delegating all structural validation to the upstream schema.",
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/DataDog/schema/main/service-catalog/v3/system.schema.json"
@@ -15,11 +15,20 @@
           "properties": {
             "lifecycle": {
               "description": "The maturity state of the system (not the deployment environment).",
-              "enum": ["experimental", "production", "deprecated"]
+              "enum": [
+                "experimental",
+                "production",
+                "deprecated"
+              ]
             },
             "tier": {
               "description": "House criticality tier (1=highest).",
-              "enum": ["1", "2", "3", "4"]
+              "enum": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
             }
           }
         },
@@ -31,7 +40,12 @@
                 "properties": {
                   "type": {
                     "description": "Contact channel type.",
-                    "enum": ["email", "slack", "microsoft-teams", "pagerduty"]
+                    "enum": [
+                      "email",
+                      "slack",
+                      "microsoft-teams",
+                      "pagerduty"
+                    ]
                   }
                 }
               }
@@ -41,7 +55,13 @@
                 "properties": {
                   "type": {
                     "description": "Link category.",
-                    "enum": ["runbook", "doc", "repo", "dashboard", "other"]
+                    "enum": [
+                      "runbook",
+                      "doc",
+                      "repo",
+                      "dashboard",
+                      "other"
+                    ]
                   }
                 }
               }
