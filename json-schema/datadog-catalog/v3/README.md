@@ -37,7 +37,7 @@ The following fields are constrained from free strings to organisation-approved 
 | Field            | Allowed values                                                                                                                   |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | `spec.type`      | `web`, `grpc`, `worker`, `scheduled-job`, `function`, `library` — see [service-type-definition.md](./service-type-definition.md) |
-| `spec.languages` | Free string; suggested values — Adopt: `typescript`, `python` \| Hold: `go`, `php`, `java`, `js`, `dart`                         |
+| `spec.languages` | Array of strings; suggested values — Adopt: `typescript`, `python` \| Hold: `go`, `php`, `java`, `js`, `dart`                    |
 
 **`datastore` only:**
 
@@ -96,5 +96,6 @@ spec:
   lifecycle: production
   tier: '1'
   type: web
-  languages: typescript
+  languages:
+    - typescript
 ```

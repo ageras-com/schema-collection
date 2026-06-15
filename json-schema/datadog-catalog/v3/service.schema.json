@@ -42,8 +42,10 @@
               ]
             },
             "languages": {
-              "type": "string",
-              "description": "Primary programming language of the service. Suggested values — Adopt: typescript, python | Hold: go, php, java, js, dart"
+              "description": "Programming languages used by the service. Suggested values — Adopt: typescript, python | Hold: go, php, java, js, dart",
+              "items": {
+                "type": "string"
+              }
             }
           }
         },
