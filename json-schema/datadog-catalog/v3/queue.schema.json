@@ -13,6 +13,15 @@
         "spec": {
           "type": "object",
           "properties": {
+            "type": {
+              "description": "Queue technology. Adopt: sqs, sns, pubsub | Hold: kinesis",
+              "enum": [
+                "sqs",
+                "sns",
+                "pubsub",
+                "kinesis"
+              ]
+            },
             "lifecycle": {
               "description": "The maturity state of the queue (not the deployment environment).",
               "enum": [
@@ -22,12 +31,12 @@
               ]
             },
             "tier": {
-              "description": "House criticality tier (1=highest).",
+              "description": "House criticality tier (1=highest). Use 'none' for experimental or unmaintained queues.",
               "enum": [
                 "1",
                 "2",
                 "3",
-                "4"
+                "none"
               ]
             }
           }
@@ -42,9 +51,7 @@
                     "description": "Contact channel type.",
                     "enum": [
                       "email",
-                      "slack",
-                      "microsoft-teams",
-                      "pagerduty"
+                      "slack"
                     ]
                   }
                 }
@@ -58,6 +65,7 @@
                     "enum": [
                       "runbook",
                       "doc",
+                      "adr",
                       "repo",
                       "dashboard",
                       "other"

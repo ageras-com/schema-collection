@@ -22,12 +22,12 @@
               ]
             },
             "tier": {
-              "description": "House criticality tier (1=highest).",
+              "description": "House criticality tier (1=highest). Use 'none' for experimental or unmaintained services.",
               "enum": [
                 "1",
                 "2",
                 "3",
-                "4"
+                "none"
               ]
             },
             "type": {
@@ -42,19 +42,8 @@
               ]
             },
             "languages": {
-              "description": "Programming languages used in the service.",
-              "items": {
-                "enum": [
-                  "dotnet",
-                  "go",
-                  "java",
-                  "js",
-                  "typescript",
-                  "php",
-                  "python",
-                  "ruby"
-                ]
-              }
+              "type": "string",
+              "description": "Primary programming language of the service. Suggested values — Adopt: typescript, python | Hold: go, php, java, js, dart"
             }
           }
         },
@@ -68,9 +57,7 @@
                     "description": "Contact channel type.",
                     "enum": [
                       "email",
-                      "slack",
-                      "microsoft-teams",
-                      "pagerduty"
+                      "slack"
                     ]
                   }
                 }
@@ -84,6 +71,7 @@
                     "enum": [
                       "runbook",
                       "doc",
+                      "adr",
                       "repo",
                       "dashboard",
                       "other"

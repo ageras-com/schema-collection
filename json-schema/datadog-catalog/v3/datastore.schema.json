@@ -13,6 +13,19 @@
         "spec": {
           "type": "object",
           "properties": {
+            "type": {
+              "description": "Datastore technology. Adopt: postgres, redis, snowflake, s3 | Hold: dynamodb | Other approved: mysql, mongodb, spanner",
+              "enum": [
+                "postgres",
+                "mysql",
+                "mongodb",
+                "spanner",
+                "redis",
+                "snowflake",
+                "s3",
+                "dynamodb"
+              ]
+            },
             "lifecycle": {
               "description": "The maturity state of the datastore (not the deployment environment).",
               "enum": [
@@ -22,12 +35,12 @@
               ]
             },
             "tier": {
-              "description": "House criticality tier (1=highest).",
+              "description": "House criticality tier (1=highest). Use 'none' for experimental or unmaintained datastores.",
               "enum": [
                 "1",
                 "2",
                 "3",
-                "4"
+                "none"
               ]
             }
           }
@@ -42,9 +55,7 @@
                     "description": "Contact channel type.",
                     "enum": [
                       "email",
-                      "slack",
-                      "microsoft-teams",
-                      "pagerduty"
+                      "slack"
                     ]
                   }
                 }
@@ -58,6 +69,7 @@
                     "enum": [
                       "runbook",
                       "doc",
+                      "adr",
                       "repo",
                       "dashboard",
                       "other"

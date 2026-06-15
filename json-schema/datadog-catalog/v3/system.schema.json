@@ -22,12 +22,12 @@
               ]
             },
             "tier": {
-              "description": "House criticality tier (1=highest).",
+              "description": "House criticality tier (1=highest). Use 'none' for experimental or unmaintained systems.",
               "enum": [
                 "1",
                 "2",
                 "3",
-                "4"
+                "none"
               ]
             }
           }
@@ -42,9 +42,7 @@
                     "description": "Contact channel type.",
                     "enum": [
                       "email",
-                      "slack",
-                      "microsoft-teams",
-                      "pagerduty"
+                      "slack"
                     ]
                   }
                 }
@@ -58,6 +56,7 @@
                     "enum": [
                       "runbook",
                       "doc",
+                      "adr",
                       "repo",
                       "dashboard",
                       "other"
