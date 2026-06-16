@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/datadog-catalog/v3/service.schema.json",
+  "title": "Datadog Service Catalog Schema - Shine",
+  "description": "Shine-specific narrowing of the Datadog v3 service catalog schema. Restricts open string fields to organisation-approved enum values while delegating all structural validation to the upstream schema.",
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/DataDog/schema/main/service-catalog/v3/service.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "spec": {
+          "type": "object",
+          "properties": {
+            "lifecycle": {
+              "description": "The lifecycle state of the service.",
+              "enum": [
+                "experimental",
+                "production",
+                "deprecated"
+              ]
+            },
+            "tier": {
+              "description": "House criticality tier (1=highest). Use 'none' for experimental or unmaintained services.",
+              "enum": [
+                "1",
+                "2",
+                "3",
+                "none"
+              ]
+            },
+            "type": {
+              "description": "The type of service.",
+              "enum": [
+                "web",
+                "grpc",
+                "worker",
+                "scheduled-job",
+                "function",
+                "library"
+              ]
+            },
+            "languages": {
+              "description": "Programming languages used by the service. Suggested values — Adopt: typescript, python | Hold: go, php, java, js, dart",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "contacts": {
+              "items": {
+                "properties": {
+                  "type": {
+                    "description": "Contact channel type.",
+                    "enum": [
+                      "email",
+                      "slack"
+                    ]
+                  }
+                }
+              }
+            },
+            "links": {
+              "items": {
+                "properties": {
+                  "type": {
+                    "description": "Link category.",
+                    "enum": [
+                      "runbook",
+                      "doc",
+                      "adr",
+                      "repo",
+                      "dashboard",
+                      "other"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

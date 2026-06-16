@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/datadog-catalog/v3/datastore.schema.json",
+  "title": "Datadog Datastore Catalog Schema - Shine",
+  "description": "Shine-specific narrowing of the Datadog v3 datastore catalog schema. Restricts lifecycle, tier, and contact/link channel types to organisation-approved enum values while delegating all structural validation to the upstream schema. Note: datastore entities normally inherit lifecycle/tier from their system via inheritFrom; these enums only apply when the fields are set explicitly.",
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/DataDog/schema/main/service-catalog/v3/datastore.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "spec": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "description": "Datastore technology. Adopt: postgres, redis, snowflake, s3 | Hold: dynamodb | Other approved: mysql, mongodb, spanner",
+              "enum": [
+                "postgres",
+                "mysql",
+                "mongodb",
+                "spanner",
+                "redis",
+                "snowflake",
+                "s3",
+                "dynamodb"
+              ]
+            },
+            "lifecycle": {
+              "description": "The maturity state of the datastore (not the deployment environment).",
+              "enum": [
+                "experimental",
+                "production",
+                "deprecated"
+              ]
+            },
+            "tier": {
+              "description": "House criticality tier (1=highest). Use 'none' for experimental or unmaintained datastores.",
+              "enum": [
+                "1",
+                "2",
+                "3",
+                "none"
+              ]
+            }
+          }
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "contacts": {
+              "items": {
+                "properties": {
+                  "type": {
+                    "description": "Contact channel type.",
+                    "enum": [
+                      "email",
+                      "slack"
+                    ]
+                  }
+                }
+              }
+            },
+            "links": {
+              "items": {
+                "properties": {
+                  "type": {
+                    "description": "Link category.",
+                    "enum": [
+                      "runbook",
+                      "doc",
+                      "adr",
+                      "repo",
+                      "dashboard",
+                      "other"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
