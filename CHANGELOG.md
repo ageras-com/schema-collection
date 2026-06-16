@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.10.0](https://github.com/ageras-com/schema-collection/compare/v1.9.0...v1.10.0) (2026-06-16)
+
+
+### Features
+
+* add the definitions and add more scope narrowing ([84b4947](https://github.com/ageras-com/schema-collection/commit/84b4947c0f1e3b18d407d74696f8fb71f026f410))
+* **datadog-catalog, #EE-697:** add v3 entity schemas for service, system, datastore, and queue ([ed0b5c0](https://github.com/ageras-com/schema-collection/commit/ed0b5c0a4886da2e06f12d24b588cb48ea89aac2))
+* **datadog-catalog:** add v3 entity schemas for service, system, datastore, and queue ([5676e51](https://github.com/ageras-com/schema-collection/commit/5676e516187988c70ee042ca53b391663842fbcf))
+
+
+### Bug Fixes
+
+* **datadog-catalog:** correct languages type from string to array to match upstream schema ([1c27adc](https://github.com/ageras-com/schema-collection/commit/1c27adcff8ed89c9a44e57de825d7d0c0e75a4c5))
+* find replace Ageras for Shine ([4c9c560](https://github.com/ageras-com/schema-collection/commit/4c9c560804ccde64e26aaa1396668de32e0cf1d7))
+* replace with shine example name ([2d483d1](https://github.com/ageras-com/schema-collection/commit/2d483d110cb76e5c6bb7179646f9add6fdf3d653))
+
 ## [1.9.0](https://github.com/ageras-com/schema-collection/compare/v1.8.0...v1.9.0) (2025-12-03)
 
 
