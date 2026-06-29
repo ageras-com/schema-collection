@@ -35,6 +35,9 @@
             }
           ]
         },
+        "extensions": {
+          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/datadog-catalog/v3/partials/extensions-defaults.schema.json"
+        },
         "metadata": {
           "type": "object",
           "properties": {

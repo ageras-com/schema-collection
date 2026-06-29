@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/datadog-catalog/v3/partials/spec-defaults.schema.json",
   "title": "Shine default spec fields",
-  "description": "Shared spec constraints applied to every Datadog catalog entity type: lifecycle, tier, area, and domain.",
+  "description": "Shared spec constraints applied to every Datadog catalog entity type: lifecycle and tier. Note: area and domain live in extensions (not spec) because the upstream schema has additionalProperties: false on spec.",
   "type": "object",
   "properties": {
     "lifecycle": {
@@ -21,14 +21,6 @@
         "3",
         "none"
       ]
-    },
-    "area": {
-      "description": "Organisational area that owns this entity.",
-      "type": "string"
-    },
-    "domain": {
-      "description": "Business domain this entity belongs to.",
-      "type": "string"
     }
   }
 }

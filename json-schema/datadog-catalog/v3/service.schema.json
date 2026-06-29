@@ -22,7 +22,8 @@
                   "description": "The type of service.",
                   "enum": [
                     "frontend",
-                    "api-gateway",
+                    "gateway",
+                    "api",
                     "proxy",
                     "grpc",
                     "worker",
@@ -40,6 +41,9 @@
               }
             }
           ]
+        },
+        "extensions": {
+          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/datadog-catalog/v3/partials/extensions-defaults.schema.json"
         },
         "metadata": {
           "type": "object",

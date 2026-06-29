@@ -3,7 +3,8 @@ The service type describes the runtime pattern of a service — how it receives 
 | Service Type      | Description                                                                                    | Typical AWS primitives                                                                      | Typical GCP primitives                                     |
 | ----------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
 | **frontend**      | Serves user-facing HTTP/HTTPS traffic; renders UI or exposes a public-facing web API           | ECS service behind an Application Load Balancer; CloudFront + S3 (static)                  | Cloud Run service; GKE Deployment behind a load balancer   |
-| **api-gateway**   | Entry-point service that routes, authenticates, or aggregates requests before passing them to downstream services | API Gateway (AWS/GCP managed); custom gateway ECS/GKE service            | Cloud Endpoints; Apigee                                    |
+| **gateway**       | Entry-point service that routes, authenticates, or aggregates requests before passing them to downstream services | API Gateway (AWS/GCP managed); custom gateway ECS/GKE service            | Cloud Endpoints; Apigee                                    |
+| **api**           | Internal REST/HTTP service consumed by other services; no direct user traffic                                    | ECS service behind an internal ALB or Service Connect                    | Cloud Run service (internal); GKE Deployment               |
 | **proxy**         | Forwards traffic between services without owning business logic; handles TLS termination, load balancing, or protocol translation | HAProxy; NGINX sidecar; Envoy                                         | Envoy; NGINX                                               |
 | **grpc**          | Serves synchronous gRPC traffic; typically internal service-to-service                         | ECS service; ALB with gRPC routing                                                          | Cloud Run service (gRPC); GKE Deployment                   |
 | **worker**        | Consumes work from a queue or stream; long-running, no inbound HTTP                            | ECS task consuming from SQS or Kinesis; Fargate service                                     | Cloud Run worker consuming from Pub/Sub; GKE Deployment    |
@@ -19,17 +20,18 @@ These three types are easy to conflate:
 - Use **scheduled-job** when the service wakes up on a fixed schedule, does a bounded unit of work, and exits (nightly report, data sync).
 - Use **function** when the service is invoked by an event and has no persistent infrastructure — it scales to zero and is billed per invocation.
 
-### frontend vs api-gateway vs proxy
+### frontend vs gateway vs api vs proxy
 
-These three handle HTTP traffic but at different layers:
+These four handle HTTP traffic but at different layers:
 
 - Use **frontend** for services that serve UI (React, Next.js, etc.) or expose a public-facing REST/GraphQL API directly consumed by clients.
-- Use **api-gateway** for a dedicated ingress layer that authenticates, rate-limits, or fans requests out to multiple downstream services before returning a response.
+- Use **gateway** for a dedicated ingress layer that authenticates, rate-limits, or fans requests out to multiple downstream services before returning a response.
+- Use **api** for an internal REST/HTTP service consumed by other services — it owns business logic and a domain, but is never called directly by end users.
 - Use **proxy** for pure traffic-forwarding infrastructure — it has no business logic, owns no domain, and is transparent to callers.
 
-### frontend vs grpc
+### api vs grpc
 
-Both serve synchronous request-response traffic. Use **frontend** for HTTP/REST or GraphQL APIs. Use **grpc** when the transport is gRPC — this matters for load balancer configuration, health check probes, and observability instrumentation.
+Both are internal service-to-service transports. Use **api** when the protocol is REST/HTTP. Use **grpc** when the transport is gRPC — this matters for load balancer configuration, health check probes, and observability instrumentation.
 
 ### library
 
