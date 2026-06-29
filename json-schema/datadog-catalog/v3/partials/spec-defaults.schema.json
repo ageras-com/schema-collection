@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/datadog-catalog/v3/partials/spec-defaults.schema.json",
+  "title": "Shine default spec fields",
+  "description": "Shared spec constraints applied to every Datadog catalog entity type: lifecycle, tier, area, and domain.",
+  "type": "object",
+  "properties": {
+    "lifecycle": {
+      "description": "The maturity state of the entity (not the deployment environment).",
+      "enum": [
+        "experimental",
+        "production",
+        "deprecated"
+      ]
+    },
+    "tier": {
+      "description": "House criticality tier (1=highest). Use 'none' for experimental or unmaintained entities.",
+      "enum": [
+        "1",
+        "2",
+        "3",
+        "none"
+      ]
+    },
+    "area": {
+      "description": "Organisational area that owns this entity.",
+      "type": "string"
+    },
+    "domain": {
+      "description": "Business domain this entity belongs to.",
+      "type": "string"
+    }
+  }
+}

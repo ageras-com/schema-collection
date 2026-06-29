@@ -11,26 +11,7 @@
       "type": "object",
       "properties": {
         "spec": {
-          "type": "object",
-          "properties": {
-            "lifecycle": {
-              "description": "The maturity state of the system (not the deployment environment).",
-              "enum": [
-                "experimental",
-                "production",
-                "deprecated"
-              ]
-            },
-            "tier": {
-              "description": "House criticality tier (1=highest). Use 'none' for experimental or unmaintained systems.",
-              "enum": [
-                "1",
-                "2",
-                "3",
-                "none"
-              ]
-            }
-          }
+          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/datadog-catalog/v3/partials/spec-defaults.schema.json"
         },
         "metadata": {
           "type": "object",

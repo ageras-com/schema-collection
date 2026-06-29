@@ -2,7 +2,9 @@ The service type describes the runtime pattern of a service — how it receives 
 
 | Service Type      | Description                                                                                    | Typical AWS primitives                                                                      | Typical GCP primitives                                     |
 | ----------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| **web**           | Serves synchronous HTTP/HTTPS traffic; exposes a public or internal API                        | ECS service behind an Application Load Balancer; API Gateway + Lambda (if request-response) | Cloud Run service; GKE Deployment behind a load balancer   |
+| **frontend**      | Serves user-facing HTTP/HTTPS traffic; renders UI or exposes a public-facing web API           | ECS service behind an Application Load Balancer; CloudFront + S3 (static)                  | Cloud Run service; GKE Deployment behind a load balancer   |
+| **api-gateway**   | Entry-point service that routes, authenticates, or aggregates requests before passing them to downstream services | API Gateway (AWS/GCP managed); custom gateway ECS/GKE service            | Cloud Endpoints; Apigee                                    |
+| **proxy**         | Forwards traffic between services without owning business logic; handles TLS termination, load balancing, or protocol translation | HAProxy; NGINX sidecar; Envoy                                         | Envoy; NGINX                                               |
 | **grpc**          | Serves synchronous gRPC traffic; typically internal service-to-service                         | ECS service; ALB with gRPC routing                                                          | Cloud Run service (gRPC); GKE Deployment                   |
 | **worker**        | Consumes work from a queue or stream; long-running, no inbound HTTP                            | ECS task consuming from SQS or Kinesis; Fargate service                                     | Cloud Run worker consuming from Pub/Sub; GKE Deployment    |
 | **scheduled-job** | Executes on a time-based schedule; short-lived and exits on completion                         | Lambda triggered by EventBridge Scheduler; ECS Scheduled Task                               | Cloud Run job triggered by Cloud Scheduler; GKE CronJob    |
@@ -17,9 +19,17 @@ These three types are easy to conflate:
 - Use **scheduled-job** when the service wakes up on a fixed schedule, does a bounded unit of work, and exits (nightly report, data sync).
 - Use **function** when the service is invoked by an event and has no persistent infrastructure — it scales to zero and is billed per invocation.
 
-### web vs grpc
+### frontend vs api-gateway vs proxy
 
-Both serve synchronous request-response traffic. Use **web** for HTTP/REST or GraphQL APIs. Use **grpc** when the transport is gRPC — this matters for load balancer configuration, health check probes, and observability instrumentation.
+These three handle HTTP traffic but at different layers:
+
+- Use **frontend** for services that serve UI (React, Next.js, etc.) or expose a public-facing REST/GraphQL API directly consumed by clients.
+- Use **api-gateway** for a dedicated ingress layer that authenticates, rate-limits, or fans requests out to multiple downstream services before returning a response.
+- Use **proxy** for pure traffic-forwarding infrastructure — it has no business logic, owns no domain, and is transparent to callers.
+
+### frontend vs grpc
+
+Both serve synchronous request-response traffic. Use **frontend** for HTTP/REST or GraphQL APIs. Use **grpc** when the transport is gRPC — this matters for load balancer configuration, health check probes, and observability instrumentation.
 
 ### library
 
