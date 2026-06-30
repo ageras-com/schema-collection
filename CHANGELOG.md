@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.11.0](https://github.com/ageras-com/schema-collection/compare/v1.10.0...v1.11.0) (2026-06-30)
+
+
+### Features
+
+* abstract spec schema and add more types ([e35cad1](https://github.com/ageras-com/schema-collection/commit/e35cad140eedbb4a3ee168d2f03b0f42bb059e52))
+* abstract spec schema and add more types ([6001069](https://github.com/ageras-com/schema-collection/commit/60010693258affa183fc0faa9093ce938dc0b217))
+* **datadog-catalog:** add api and gateway service types, move area/domain to extensions ([2a00852](https://github.com/ageras-com/schema-collection/commit/2a00852f00fca00e5add923bd02daa2cb49f0792))
+
+
+### Bug Fixes
+
+* align service-tiers ([e985218](https://github.com/ageras-com/schema-collection/commit/e9852181af81c2f7da73eba5665d07bc5b6265ae))
+* **datadog-catalog:** add extensions-defaults to system schema ([6fedc61](https://github.com/ageras-com/schema-collection/commit/6fedc61efa59db506149ad63334ba9147b0ca9bd))
+
 ## [1.10.0](https://github.com/ageras-com/schema-collection/compare/v1.9.0...v1.10.0) (2026-06-16)
 
 
