@@ -14,11 +14,11 @@
       ]
     },
     "tier": {
-      "description": "House criticality tier (1=highest). Use 'none' for experimental or unmaintained entities.",
+      "description": "House criticality tier (tier-1=highest). Use 'none' for experimental or unmaintained entities.",
       "enum": [
-        "1",
-        "2",
-        "3",
+        "tier-1",
+        "tier-2",
+        "tier-3",
         "none"
       ]
     }
