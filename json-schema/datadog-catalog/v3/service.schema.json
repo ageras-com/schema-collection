@@ -11,43 +11,39 @@
       "type": "object",
       "properties": {
         "spec": {
-          "type": "object",
-          "properties": {
-            "lifecycle": {
-              "description": "The lifecycle state of the service.",
-              "enum": [
-                "experimental",
-                "production",
-                "deprecated"
-              ]
+          "allOf": [
+            {
+              "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/datadog-catalog/v3/partials/spec-defaults.schema.json"
             },
-            "tier": {
-              "description": "House criticality tier (1=highest). Use 'none' for experimental or unmaintained services.",
-              "enum": [
-                "1",
-                "2",
-                "3",
-                "none"
-              ]
-            },
-            "type": {
-              "description": "The type of service.",
-              "enum": [
-                "web",
-                "grpc",
-                "worker",
-                "scheduled-job",
-                "function",
-                "library"
-              ]
-            },
-            "languages": {
-              "description": "Programming languages used by the service. Suggested values — Adopt: typescript, python | Hold: go, php, java, js, dart",
-              "items": {
-                "type": "string"
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "description": "The type of service.",
+                  "enum": [
+                    "frontend",
+                    "gateway",
+                    "api",
+                    "proxy",
+                    "grpc",
+                    "worker",
+                    "scheduled-job",
+                    "function",
+                    "library"
+                  ]
+                },
+                "languages": {
+                  "description": "Programming languages used by the service. Suggested values — Adopt: typescript, python | Hold: go, php, java, js, dart",
+                  "items": {
+                    "type": "string"
+                  }
+                }
               }
             }
-          }
+          ]
+        },
+        "extensions": {
+          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/datadog-catalog/v3/partials/extensions-defaults.schema.json"
         },
         "metadata": {
           "type": "object",

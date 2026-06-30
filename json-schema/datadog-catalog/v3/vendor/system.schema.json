@@ -38,8 +38,7 @@
               "type": "string",
               "description": "The importance of the system",
               "examples": [
-                "1",
-                "High"
+                "tier-1"
               ],
               "minLength": 1
             },

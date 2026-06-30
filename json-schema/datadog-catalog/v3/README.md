@@ -25,12 +25,12 @@ The following fields are constrained from free strings to organisation-approved 
 
 **Shared across all kinds:**
 
-| Field                      | Allowed values                                                                                                               |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `spec.lifecycle`           | `experimental`, `production`, `deprecated` (maturity, **not** deployment environment)                                        |
-| `spec.tier`                | `1`, `2`, `3`, `none` (house criticality tier, 1 = highest — see [service-tier-definition.md](./service-tier-definition.md)) |
-| `metadata.contacts[].type` | `email`, `slack`                                                                                                             |
-| `metadata.links[].type`    | `runbook`, `doc`, `adr`, `repo`, `dashboard`, `other`                                                                        |
+| Field                      | Allowed values                                                                                                                                   |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `spec.lifecycle`           | `experimental`, `production`, `deprecated` (maturity, **not** deployment environment)                                                            |
+| `spec.tier`                | `tier-1`, `tier-2`, `tier-3`, `none` (house criticality tier, tier-1 = highest — see [service-tier-definition.md](./service-tier-definition.md)) |
+| `metadata.contacts[].type` | `email`, `slack`                                                                                                                                 |
+| `metadata.links[].type`    | `runbook`, `doc`, `adr`, `repo`, `dashboard`, `other`                                                                                            |
 
 **`service` only:**
 
@@ -94,7 +94,7 @@ metadata:
       url: https://wiki.shine.com/payments-api
 spec:
   lifecycle: production
-  tier: '1'
+  tier: 'tier-1'
   type: web
   languages:
     - typescript
