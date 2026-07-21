@@ -1,6 +1,6 @@
-# Datadog Service Catalog v3 — Shine schema
+# Datadog Service Catalog v3 — Custom schema
 
-Validates `catalog-info.yaml` files for Datadog Service Catalog v3 entries, narrowing the upstream schema to Shine-approved values.
+Validates `catalog-info.yaml` files for Datadog Service Catalog v3 entries, narrowing the upstream schema to org-approved values.
 
 ## Schema files
 
@@ -16,28 +16,32 @@ Pick the schema matching the entity's `kind`. Each extends the upstream Datadog 
 | `service-tier-definition.md`      | —           | Describes the four service tiers and their SLO/SLA commitments.                                                                       |
 | `service-lifecycle-definition.md` | —           | Describes the three lifecycle states and their operational expectations.                                                              |
 | `service-type-definition.md`      | —           | Describes the six service types and guidance for choosing between them.                                                               |
+| `extensions-definition.md`        | —           | Describes the required `extensions.domain` / `extensions.area` ownership fields and the domain → area mapping.                        |
 
 A `service.datadog.yaml` holds a single `service` entity. A root `entity.datadog.yaml` may hold multiple documents (one `system`, plus its `datastore`/`queue` peers) — validate each document against the schema for its `kind`.
 
 ## Narrowed enums
 
-The following fields are constrained from free strings to organisation-approved values.
+The following fields are constrained from free strings to organization-approved values.
 
 **Shared across all kinds:**
 
-| Field                      | Allowed values                                                                                                                                   |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `spec.lifecycle`           | `experimental`, `production`, `deprecated` (maturity, **not** deployment environment)                                                            |
-| `spec.tier`                | `tier-1`, `tier-2`, `tier-3`, `none` (house criticality tier, tier-1 = highest — see [service-tier-definition.md](./service-tier-definition.md)) |
-| `metadata.contacts[].type` | `email`, `slack`                                                                                                                                 |
-| `metadata.links[].type`    | `runbook`, `doc`, `adr`, `repo`, `dashboard`, `other`                                                                                            |
+| Field                      | Allowed values                                                                                                                                                                                                                                  |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `spec.lifecycle`           | `experimental`, `production`, `deprecated` (maturity, **not** deployment environment)                                                                                                                                                           |
+| `spec.tier`                | `tier-1`, `tier-2`, `tier-3`, `none` (house criticality tier, tier-1 = highest — see [service-tier-definition.md](./service-tier-definition.md))                                                                                                |
+| `metadata.contacts[].type` | `email`, `slack`                                                                                                                                                                                                                                |
+| `metadata.links[].type`    | `runbook`, `doc`, `adr`, `repo`, `dashboard`, `other`                                                                                                                                                                                           |
+| `extensions.domain`        | **Required.** Business domain                                                                                                                                                                                                                   |
+| `extensions.area`          | **Required.** Organizational area; allowed values depend on `extensions.domain`                                                                                                                                                                 |
+| `metadata.tags`            | **Required.** Must include a `domain:<value>` tag and an `area:<value>` tag that exactly match `extensions.domain` and `extensions.area`. These tags are the searchable form of those fields in Datadog (extensions fields are not filterable). |
 
 **`service` only:**
 
-| Field            | Allowed values                                                                                                                   |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `spec.type`      | `web`, `grpc`, `worker`, `scheduled-job`, `function`, `library` — see [service-type-definition.md](./service-type-definition.md) |
-| `spec.languages` | Array of strings; suggested values — Adopt: `typescript`, `python` \| Hold: `go`, `php`, `java`, `js`, `dart`                    |
+| Field            | Allowed values                                                                                                                                                   |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `spec.type`      | `frontend`, `gateway`, `api`, `proxy`, `grpc`, `worker`, `scheduled-job`, `function`, `library` — see [service-type-definition.md](./service-type-definition.md) |
+| `spec.languages` | Array of strings; suggested values — Adopt: `typescript`, `python` \| Hold: `go`, `php`, `java`, `js`, `dart`                                                    |
 
 **`datastore` only:**
 
@@ -66,7 +70,7 @@ To add or remove values, edit the `enum` arrays in the relevant schema file. The
 }
 ```
 
-The upstream schema handles all structural validation (required fields, types, formats). The second member narrows specific fields. Both must pass — so values must satisfy the upstream constraints _and_ be in the Shine-approved enum.
+The upstream schema handles all structural validation (required fields, types, formats). The second member narrows specific fields. Both must pass — so values must satisfy the upstream constraints _and_ be in the org-approved enum.
 
 ## Upstream schema URL
 
@@ -85,17 +89,23 @@ metadata:
   name: payments-api
   description: Handles payment processing
   owner: payments-team
+  tags:
+    - domain:banking
+    - area:banking-experience
   contacts:
     - type: slack
-      contact: https://shine.slack.com/archives/C0123PAYMENTS
+      contact: https://your-workspace.slack.com/archives/C0123EXAMPLE
   links:
     - name: Runbook
       type: runbook
-      url: https://wiki.shine.com/payments-api
+      url: https://wiki.example.com/payments-api
 spec:
   lifecycle: production
   tier: 'tier-1'
-  type: web
+  type: api
   languages:
     - typescript
+extensions:
+  domain: banking
+  area: banking-experience
 ```

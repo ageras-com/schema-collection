@@ -1,0 +1,693 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/datadog-catalog/v3/partials/tags-defaults.schema.json",
+  "title": "Shine tag mirroring requirements",
+  "description": "Requires metadata.tags to mirror extensions.domain and extensions.area exactly as domain:<value> and area:<value> tags. These tags are necessary for Datadog filtering because extensions fields are not searchable.",
+  "type": "object",
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "domain"
+            ],
+            "properties": {
+              "domain": {
+                "const": "accounting"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "domain:accounting"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "domain"
+            ],
+            "properties": {
+              "domain": {
+                "const": "banking"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "domain:banking"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "domain"
+            ],
+            "properties": {
+              "domain": {
+                "const": "platform"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "domain:platform"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "domain"
+            ],
+            "properties": {
+              "domain": {
+                "const": "infrastructure-it"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "domain:infrastructure-it"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "domain"
+            ],
+            "properties": {
+              "domain": {
+                "const": "data-analytics"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "domain:data-analytics"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "area"
+            ],
+            "properties": {
+              "area": {
+                "const": "accounting-advisors"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "area:accounting-advisors"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "area"
+            ],
+            "properties": {
+              "area": {
+                "const": "accounting-preaccounting"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "area:accounting-preaccounting"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "area"
+            ],
+            "properties": {
+              "area": {
+                "const": "accounting-invoicing"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "area:accounting-invoicing"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "area"
+            ],
+            "properties": {
+              "area": {
+                "const": "banking-customer-lifecycle"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "area:banking-customer-lifecycle"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "area"
+            ],
+            "properties": {
+              "area": {
+                "const": "banking-experience"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "area:banking-experience"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "area"
+            ],
+            "properties": {
+              "area": {
+                "const": "banking-foundations"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "area:banking-foundations"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "area"
+            ],
+            "properties": {
+              "area": {
+                "const": "banking-lending-partnerships"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "area:banking-lending-partnerships"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "area"
+            ],
+            "properties": {
+              "area": {
+                "const": "platform-solutions"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "area:platform-solutions"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "area"
+            ],
+            "properties": {
+              "area": {
+                "const": "platform-e-invoicing"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "area:platform-e-invoicing"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "area"
+            ],
+            "properties": {
+              "area": {
+                "const": "infrastructure"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "area:infrastructure"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "area"
+            ],
+            "properties": {
+              "area": {
+                "const": "it"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "area:it"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "area"
+            ],
+            "properties": {
+              "area": {
+                "const": "data-analytics-platform"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "area:data-analytics-platform"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "area"
+            ],
+            "properties": {
+              "area": {
+                "const": "organization-analytics"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "area:organization-analytics"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -2,16 +2,155 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/datadog-catalog/v3/partials/extensions-defaults.schema.json",
   "title": "Shine default extensions fields",
-  "description": "Shared extensions constraints applied to every Datadog catalog entity type: area and domain. These live in extensions rather than spec because the upstream schema has additionalProperties: false on spec.",
+  "description": "Shared extensions constraints applied to every Datadog catalog entity type: domain and area. These live in extensions rather than spec because the upstream schema has additionalProperties: false on spec. Both are required — see extensions-definition.md.",
   "type": "object",
   "properties": {
-    "area": {
-      "description": "Organisational area that owns this entity.",
-      "type": "string"
-    },
     "domain": {
       "description": "Business domain this entity belongs to.",
-      "type": "string"
+      "enum": [
+        "accounting",
+        "banking",
+        "platform",
+        "infrastructure-it",
+        "data-analytics"
+      ]
+    },
+    "area": {
+      "description": "Organisational area that owns this entity, nested under domain.",
+      "enum": [
+        "accounting-advisors",
+        "accounting-preaccounting",
+        "accounting-invoicing",
+        "banking-customer-lifecycle",
+        "banking-experience",
+        "banking-foundations",
+        "banking-lending-partnerships",
+        "platform-solutions",
+        "platform-e-invoicing",
+        "infrastructure",
+        "it",
+        "data-analytics-platform",
+        "organization-analytics"
+      ]
     }
-  }
+  },
+  "required": [
+    "domain",
+    "area"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "domain"
+        ],
+        "properties": {
+          "domain": {
+            "const": "accounting"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "area": {
+            "enum": [
+              "accounting-advisors",
+              "accounting-preaccounting",
+              "accounting-invoicing"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "domain"
+        ],
+        "properties": {
+          "domain": {
+            "const": "banking"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "area": {
+            "enum": [
+              "banking-customer-lifecycle",
+              "banking-experience",
+              "banking-foundations",
+              "banking-lending-partnerships"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "domain"
+        ],
+        "properties": {
+          "domain": {
+            "const": "platform"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "area": {
+            "enum": [
+              "platform-solutions",
+              "platform-e-invoicing"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "domain"
+        ],
+        "properties": {
+          "domain": {
+            "const": "infrastructure-it"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "area": {
+            "enum": [
+              "infrastructure",
+              "it"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "domain"
+        ],
+        "properties": {
+          "domain": {
+            "const": "data-analytics"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "area": {
+            "enum": [
+              "data-analytics-platform",
+              "organization-analytics"
+            ]
+          }
+        }
+      }
+    }
+  ]
 }

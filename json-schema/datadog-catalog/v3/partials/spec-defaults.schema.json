@@ -22,5 +22,9 @@
         "none"
       ]
     }
-  }
+  },
+  "required": [
+    "lifecycle",
+    "tier"
+  ]
 }
