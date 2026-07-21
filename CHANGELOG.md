@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.12.0](https://github.com/ageras-com/schema-collection/compare/v1.11.0...v1.12.0) (2026-07-21)
+
+
+### Features
+
+* align catalog context ([38a63e0](https://github.com/ageras-com/schema-collection/commit/38a63e0a0ab1dd4ed555a1b16be5e16e997566aa))
+* align with catalog-context ([b4f581b](https://github.com/ageras-com/schema-collection/commit/b4f581b0c6cdabcf2f32fefba1ec24b5ebb2379e))
+
 ## [1.11.0](https://github.com/ageras-com/schema-collection/compare/v1.10.0...v1.11.0) (2026-06-30)
 
 
