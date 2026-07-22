@@ -1,0 +1,93 @@
+name: Sync catalog-context
+
+on:
+  schedule:
+    - cron: "0 8 * * 1" # weekly, Monday 08:00 UTC
+  repository_dispatch:
+    types: [catalog-context-release]
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: Download and diff, but do not open a PR
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  sync:
+    name: Sync canonical values from catalog-context
+    runs-on: ubuntu-latest
+    steps:
+      - name: GCP Authentication
+        uses: shinetools/github-actions/gcp/authentication@v1
+
+      - id: secrets
+        uses: google-github-actions/get-secretmanager-secrets@v3
+        with:
+          secrets: |-
+            RELEASE_PLEASE_KEY_BASE64:shine-internal-2364/SHINE_RELEASE_PLEASE_GITHUB_APP_PRIVATE_KEY_BASE64
+
+      - id: decode-private-key
+        shell: bash
+        run: |
+          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          echo "RELEASE_PLEASE_KEY<<$EOF" >> "$GITHUB_OUTPUT"
+          echo "${{ steps.secrets.outputs.RELEASE_PLEASE_KEY_BASE64 }}" | base64 --decode | while IFS= read -r line; do
+            echo "::add-mask::$line"
+            echo "$line" >> "$GITHUB_OUTPUT"
+          done
+          echo "$EOF" >> "$GITHUB_OUTPUT"
+
+      - id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: Iv23liRRqGvmap67S5KI
+          private-key: ${{ steps.decode-private-key.outputs.RELEASE_PLEASE_KEY }}
+          owner: ageras-com
+          repositories: schema-collection,catalog-context
+
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+
+      - name: Download catalog-context schema assets
+        run: |
+          mkdir -p /tmp/catalog-context
+          gh release download \
+            --repo ageras-com/catalog-context \
+            --pattern '*.schema.json' \
+            --dir /tmp/catalog-context/
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+
+      - name: Sync canonical values from catalog-context
+        run: node scripts/sync-catalog-context.mjs /tmp/catalog-context/
+
+      - name: Open or update sync PR
+        if: ${{ !inputs.dry-run }}
+        uses: peter-evans/create-pull-request@v8
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          branch: chore/sync-catalog-context
+          base: main
+          commit-message: "chore: sync canonical values from catalog-context"
+          title: "chore: sync canonical values from catalog-context"
+          delete-branch: false
+          labels: automated, schema-sync
+          body: |
+            Automated sync of canonical enum values from the latest [catalog-context](https://github.com/ageras-com/catalog-context) release.
+
+            **Files updated:**
+            - `partials/spec-defaults.schema.json` — `lifecycle` and `tier` enums
+            - `partials/extensions-defaults.schema.json` — `domain` enum, flat `area` enum, domain→area `allOf`
+            - `partials/tags-defaults.schema.json` — `domain:<value>` and `area:<value>` tag mirroring blocks
+            - `service.schema.json` — service `type` enum
+
+            ⚠️ **Potentially breaking.** Any entity whose enum value was removed from
+            catalog-context will start failing validation once this merges and releases.
+            Review the diff before merging.
