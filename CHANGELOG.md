@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.13.0](https://github.com/ageras-com/schema-collection/compare/v1.12.0...v1.13.0) (2026-08-12)
+
+
+### Features
+
+* **#EE-804:** rewrite sync-catalog-context as plain .mjs ([4b3a501](https://github.com/ageras-com/schema-collection/commit/4b3a5016889c30d466cf688cb22ba76d28cd2208))
+* add accounting-core area ([797d5e1](https://github.com/ageras-com/schema-collection/commit/797d5e1e10865184a650abc5fc95dbf1187e0bf2))
+* add accounting-core area ([1defd2a](https://github.com/ageras-com/schema-collection/commit/1defd2a57314040523f5f0ed6faf7f34325136d9))
+* rewrite sync-catalog-context as plain .mjs ([e02bd88](https://github.com/ageras-com/schema-collection/commit/e02bd884323af65364a06f5173b280399db7c41b))
+
 ## [1.12.0](https://github.com/ageras-com/schema-collection/compare/v1.11.0...v1.12.0) (2026-07-21)
 
 
