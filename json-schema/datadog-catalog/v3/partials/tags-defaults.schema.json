@@ -321,6 +321,44 @@
             ],
             "properties": {
               "area": {
+                "const": "accounting-core"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "area:accounting-core"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "area"
+            ],
+            "properties": {
+              "area": {
                 "const": "banking-customer-lifecycle"
               }
             }
