@@ -30,6 +30,7 @@
         "platform-e-invoicing",
         "infrastructure",
         "it",
+        "engineering-efficiency",
         "data-analytics-platform",
         "organization-analytics"
       ]
@@ -126,7 +127,8 @@
           "area": {
             "enum": [
               "infrastructure",
-              "it"
+              "it",
+              "engineering-efficiency"
             ]
           }
         }
