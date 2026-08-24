@@ -663,6 +663,44 @@
             ],
             "properties": {
               "area": {
+                "const": "engineering-efficiency"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "area:engineering-efficiency"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "area"
+            ],
+            "properties": {
+              "area": {
                 "const": "data-analytics-platform"
               }
             }
