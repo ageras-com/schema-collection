@@ -203,6 +203,44 @@
         "properties": {
           "extensions": {
             "required": [
+              "domain"
+            ],
+            "properties": {
+              "domain": {
+                "const": "erp"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "domain:erp"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
               "area"
             ],
             "properties": {
@@ -758,6 +796,120 @@
               "tags": {
                 "contains": {
                   "const": "area:organization-analytics"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "area"
+            ],
+            "properties": {
+              "area": {
+                "const": "erp-platform"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "area:erp-platform"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "area"
+            ],
+            "properties": {
+              "area": {
+                "const": "erp-provisioning"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "area:erp-provisioning"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "area"
+            ],
+            "properties": {
+              "area": {
+                "const": "erp-salesmanagement"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "area:erp-salesmanagement"
                 }
               }
             }
