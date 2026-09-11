@@ -12,7 +12,8 @@
         "banking",
         "platform",
         "infrastructure-it",
-        "data-analytics"
+        "data-analytics",
+        "erp"
       ]
     },
     "area": {
@@ -32,7 +33,10 @@
         "it",
         "engineering-efficiency",
         "data-analytics-platform",
-        "organization-analytics"
+        "organization-analytics",
+        "erp-platform",
+        "erp-provisioning",
+        "erp-salesmanagement"
       ]
     }
   },
@@ -151,6 +155,29 @@
             "enum": [
               "data-analytics-platform",
               "organization-analytics"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "domain"
+        ],
+        "properties": {
+          "domain": {
+            "const": "erp"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "area": {
+            "enum": [
+              "erp-platform",
+              "erp-provisioning",
+              "erp-salesmanagement"
             ]
           }
         }
