@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.14.0](https://github.com/ageras-com/schema-collection/compare/v1.13.0...v1.14.0) (2026-09-11)
+
+
+### Features
+
+* add engineering-efficiency area under infrastructure-it domain ([b110060](https://github.com/ageras-com/schema-collection/commit/b110060c89af983e40c29c151b73c7b29a4e1937))
+* add engineering-efficiency area under infrastructure-it domain ([4f5edc8](https://github.com/ageras-com/schema-collection/commit/4f5edc83ac8914005246c3b8748d77f345407da7))
+* add erp domain ([137e314](https://github.com/ageras-com/schema-collection/commit/137e31441b928ed2dc6c688ac70bbd81f30f538c))
+* add erp domain ([f184e09](https://github.com/ageras-com/schema-collection/commit/f184e09069b9533d73807ae028171fdc1e62a655))
+
+
+### Bug Fixes
+
+* require domain:erp/area:erp-* tag mirroring ([61587e8](https://github.com/ageras-com/schema-collection/commit/61587e8314c8fbb50e7bb68b6d238f4b488a9645))
+* update pipeline actions to support node 24 (EE-575) ([40acdb1](https://github.com/ageras-com/schema-collection/commit/40acdb15abb8b9ac81e6f3b98e09f134bf2743c9))
+* update pipeline actions to support node 24 (EE-575) ([eba7fef](https://github.com/ageras-com/schema-collection/commit/eba7fef596f86b78c2acd39b486c5cc42f157605))
+
 ## [1.13.0](https://github.com/ageras-com/schema-collection/compare/v1.12.0...v1.13.0) (2026-08-12)
 
 
