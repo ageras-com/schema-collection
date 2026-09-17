@@ -549,6 +549,44 @@
             ],
             "properties": {
               "area": {
+                "const": "banking-ai-ops"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "metadata"
+        ],
+        "properties": {
+          "metadata": {
+            "required": [
+              "tags"
+            ],
+            "properties": {
+              "tags": {
+                "contains": {
+                  "const": "area:banking-ai-ops"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "extensions"
+        ],
+        "properties": {
+          "extensions": {
+            "required": [
+              "area"
+            ],
+            "properties": {
+              "area": {
                 "const": "platform-solutions"
               }
             }
