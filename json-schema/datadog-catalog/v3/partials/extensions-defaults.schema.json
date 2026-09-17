@@ -27,6 +27,7 @@
         "banking-experience",
         "banking-foundations",
         "banking-lending-partnerships",
+        "banking-ai-ops",
         "platform-solutions",
         "platform-e-invoicing",
         "infrastructure",
@@ -87,7 +88,8 @@
               "banking-customer-lifecycle",
               "banking-experience",
               "banking-foundations",
-              "banking-lending-partnerships"
+              "banking-lending-partnerships",
+              "banking-ai-ops"
             ]
           }
         }
