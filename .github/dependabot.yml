@@ -14,6 +14,14 @@ updates:
     cooldown:
       default-days: 1
     groups:
+      internal-github-actions:
+        patterns:
+          - "shinetools/github-actions"
+          - "shinetools/github-actions/**"
+          - "ageras-com/github-actions"
+          - "ageras-com/github-actions/**"
+          - "billysbilling/github-actions"
+          - "billysbilling/github-actions/**"
       github-actions-minor-and-patch:
         patterns:
           - "*"
