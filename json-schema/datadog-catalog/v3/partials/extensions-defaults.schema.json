@@ -13,7 +13,8 @@
         "platform",
         "infrastructure-it",
         "data-analytics",
-        "erp"
+        "erp",
+        "payroll"
       ]
     },
     "area": {
@@ -37,7 +38,9 @@
         "organization-analytics",
         "erp-platform",
         "erp-provisioning",
-        "erp-salesmanagement"
+        "erp-salesmanagement",
+        "payroll-nl",
+        "payroll-dk"
       ]
     }
   },
@@ -180,6 +183,28 @@
               "erp-platform",
               "erp-provisioning",
               "erp-salesmanagement"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "domain"
+        ],
+        "properties": {
+          "domain": {
+            "const": "payroll"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "area": {
+            "enum": [
+              "payroll-nl",
+              "payroll-dk"
             ]
           }
         }
