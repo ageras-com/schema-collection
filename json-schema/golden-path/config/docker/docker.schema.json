@@ -18,6 +18,14 @@
         "target": {
           "type": "string",
           "description": "Sets the target build stage to build in a multi-stage Dockerfile."
+        },
+        "build_args": {
+          "type": "array",
+          "description": "Docker build arguments, as KEY=VALUE.",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z_][A-Za-z0-9_]*="
+          }
         }
       },
       "additionalProperties": false

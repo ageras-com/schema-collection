@@ -7,6 +7,9 @@
       "oneOf": [
         {
           "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/golden-path/config/registry/ecr-registry.schema.json#"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/golden-path/config/registry/gar-registry.schema.json#"
         }
       ]
     }
