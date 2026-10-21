@@ -9,9 +9,11 @@ description: Your service description
 type: one of [ecs]
 
 registry:
-  type: one of [ecr]
+  type: one of [ecr, gar]
   repository: your-repository
   region: your-region
+
+deploy_sequentially: true # optional: one environment at a time, in listed order
 
 <application-config>:
   <default (required) | staging | production>:

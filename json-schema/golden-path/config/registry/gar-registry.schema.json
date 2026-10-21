@@ -1,0 +1,22 @@
+{
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/golden-path/config/registry/gar-registry.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "description": "The Google Artifact Registry repository where the application's Docker image is stored.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["gar"],
+      "description": "The type of container registry."
+    },
+    "repository": {
+      "type": "string",
+      "description": "The repository path: <project>/<repository>/<image>."
+    },
+    "region": {
+      "type": "string",
+      "description": "Artifact Registry location (host <region>-docker.pkg.dev)."
+    }
+  },
+  "required": ["type", "repository", "region"]
+}

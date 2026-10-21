@@ -12,6 +12,10 @@
       },
       "minItems": 1,
       "uniqueItems": true
+    },
+    "deploy_sequentially": {
+      "type": "boolean",
+      "description": "Deploy environments one at a time in listed order, stopping at the first failure. Default false."
     }
   }
 }
