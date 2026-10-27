@@ -6,7 +6,7 @@ Validates configuration files following this pattern:
 
 name: service-name
 description: Your service description
-type: one of [ecs]
+type: one of [ecs, lambda, cloudrun]
 
 registry:
   type: one of [ecr, gar]

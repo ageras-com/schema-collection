@@ -1,0 +1,16 @@
+{
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/golden-path/config/application/cloudrun-application-config.schema.json#",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "cloudrun"
+      ],
+      "description": "The workload type of the application. Each .deploy/*.jsonnet file is one Cloud Run service."
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

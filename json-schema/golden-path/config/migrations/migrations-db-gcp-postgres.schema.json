@@ -1,0 +1,55 @@
+{
+  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/golden-path/config/migrations/migrations-db-gcp-postgres.schema.json",
+  "type": "object",
+  "description": "Cloud SQL for PostgreSQL configuration to run migrations.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "gcp-postgres"
+      ],
+      "description": "The type of database to run migrations against."
+    },
+    "default": {
+      "$ref": "#/definitions/run-environment-config",
+      "description": "Default configuration parameters to run migration."
+    }
+  },
+  "additionalProperties": {
+    "$ref": "#/definitions/run-environment-config",
+    "description": "Environment specific configuration parameters to run migration."
+  },
+  "required": [
+    "type",
+    "default"
+  ],
+  "definitions": {
+    "run-environment-config": {
+      "type": "object",
+      "description": "Per environment configuration parameters to run migration.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the database."
+        },
+        "schema": {
+          "type": "string",
+          "description": "The database schema to use for migrations."
+        },
+        "username_ref": {
+          "type": "string",
+          "description": "Secret Manager secret holding the database username. A bare name is read from the instance's project."
+        },
+        "password_ref": {
+          "type": "string",
+          "description": "Secret Manager secret holding the database password. A bare name is read from the instance's project."
+        },
+        "endpoint": {
+          "type": "string",
+          "description": "The Cloud SQL instance connection name (project:region:instance)."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
