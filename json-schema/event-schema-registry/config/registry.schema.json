@@ -65,6 +65,19 @@
           },
           "compatibility": {
             "$ref": "#/definitions/compatibilityMode"
+          },
+          "topics": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+            },
+            "minItems": 1,
+            "uniqueItems": true,
+            "description": "Names of the topics the event is published to, without project or environment",
+            "examples": [
+              ["core-banking-events"]
+            ]
           }
         },
         "additionalProperties": false
