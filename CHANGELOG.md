@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.15.0](https://github.com/ageras-com/schema-collection/compare/v1.14.0...v1.15.0) (2026-11-06)
+
+
+### Features
+
+* **event-schema-registry:** allow topics on registry events ([0fee52f](https://github.com/ageras-com/schema-collection/commit/0fee52f62bbb5b9b9d760064803c83fb6d55f0d0))
+* **event-schema-registry:** allow topics on registry events ([5ff27bb](https://github.com/ageras-com/schema-collection/commit/5ff27bb517471adbb51d18554f3656690ab06a4a))
+* **golden-path:** add deploy_sequentially, docker build_args and the gar registry ([e1ab720](https://github.com/ageras-com/schema-collection/commit/e1ab720d12a7e602be4e489082a2b32bb92ca6a2))
+* **golden-path:** add deploy_sequentially, docker build_args and the gar registry ([e17d002](https://github.com/ageras-com/schema-collection/commit/e17d002f87a303fc78581fe0d74bbf02957aa70e))
+* **golden-path:** add the cloudrun workload type and gcp-postgres migrations ([210268a](https://github.com/ageras-com/schema-collection/commit/210268ab6a7b31272ff59f4438dbabfa6f01fe43))
+
+
+### Bug Fixes
+
+* **event-schema-registry:** accept all Pub/Sub topic names in registry topics ([f8221bf](https://github.com/ageras-com/schema-collection/commit/f8221bf1d84b1ff83a101e2495955233163674ba))
+* **event-schema-registry:** accept all Pub/Sub topic names in registry topics ([25f00fe](https://github.com/ageras-com/schema-collection/commit/25f00fe66a34e199dd6ad6f5bcd03032837c0bcf))
+
 ## [1.14.0](https://github.com/ageras-com/schema-collection/compare/v1.13.0...v1.14.0) (2026-09-11)
 
 
