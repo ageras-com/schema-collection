@@ -1,0 +1,25 @@
+# This file is managed by Terraform. Do not edit it directly.
+# To make changes, update the configuration in https://github.com/shine-foundation/tf-github
+# Source: shine-foundation/tf-github-modules, modules/components/release
+name: Release
+on:
+  push:
+    branches:
+      - main
+
+permissions: {}
+
+jobs:
+  release:
+    # release-please runs as the shine-release-please App (installed by the module): its release PR triggers CI,
+    # and it may create the release tags.
+    permissions:
+      contents: write
+      id-token: write
+      issues: write
+      pull-requests: write
+    uses: shine-foundation/github-actions/.github/workflows/delivery__release-please.yml@4dbfff26e66848f1b984f70fd85f73c7832103bc # v1.15.0
+    with:
+      release-type: simple
+      path: "."
+      tag-major: true
