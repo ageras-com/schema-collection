@@ -1,4 +1,5 @@
 # This file is managed by Terraform. Do not edit it directly.
-# To make changes, update the configuration in https://github.com/ageras-com/tf-github
+# To make changes, update the configuration in https://github.com/shine-foundation/tf-github
+# Source: shine-foundation/tf-github-modules, modules/components/codeowners
 
-* @ageras-com/pt-eng-platform-engineeringefficiency
+* @shine-foundation/pt-eng-platform-engineeringefficiency
