@@ -9,4 +9,4 @@ on:
 
 jobs:
   check-codeowners:
-    uses: shine-foundation/github-actions/.github/workflows/github__codeowners-coverage.yml@f28f015392f109699319b3a7dd1ee5d56a8aa9fa # v1.15.2
+    uses: shine-foundation/github-actions/.github/workflows/github__codeowners-coverage.yml@68ff7e923183a1e73366fdb040cee70d54da7993 # v1.19.1
