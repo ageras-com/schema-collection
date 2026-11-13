@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/datadog-catalog/v3/partials/tags-defaults.schema.json",
+  "$id": "https://raw.githubusercontent.com/shine-foundation/schema-collection/v1/json-schema/datadog-catalog/v3/partials/tags-defaults.schema.json",
   "title": "Shine tag mirroring requirements",
   "description": "Requires metadata.tags to mirror extensions.domain and extensions.area exactly as domain:<value> and area:<value> tags. These tags are necessary for Datadog filtering because extensions fields are not searchable.",
   "type": "object",

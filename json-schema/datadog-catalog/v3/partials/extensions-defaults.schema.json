@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/datadog-catalog/v3/partials/extensions-defaults.schema.json",
+  "$id": "https://raw.githubusercontent.com/shine-foundation/schema-collection/v1/json-schema/datadog-catalog/v3/partials/extensions-defaults.schema.json",
   "title": "Shine default extensions fields",
   "description": "Shared extensions constraints applied to every Datadog catalog entity type: domain and area. These live in extensions rather than spec because the upstream schema has additionalProperties: false on spec. Both are required — see extensions-definition.md.",
   "type": "object",

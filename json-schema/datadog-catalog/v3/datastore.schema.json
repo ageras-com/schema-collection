@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/datadog-catalog/v3/datastore.schema.json",
+  "$id": "https://raw.githubusercontent.com/shine-foundation/schema-collection/v1/json-schema/datadog-catalog/v3/datastore.schema.json",
   "title": "Datadog Datastore Catalog Schema - Shine",
   "description": "Shine-specific narrowing of the Datadog v3 datastore catalog schema. Restricts lifecycle, tier, and contact/link channel types to organisation-approved enum values while delegating all structural validation to the upstream schema. Note: datastore entities normally inherit lifecycle/tier from their system via inheritFrom; these enums only apply when the fields are set explicitly.",
   "allOf": [
@@ -13,7 +13,7 @@
         "spec": {
           "allOf": [
             {
-              "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/datadog-catalog/v3/partials/spec-defaults.schema.json"
+              "$ref": "https://raw.githubusercontent.com/shine-foundation/schema-collection/v1/json-schema/datadog-catalog/v3/partials/spec-defaults.schema.json"
             },
             {
               "type": "object",
@@ -36,7 +36,7 @@
           ]
         },
         "extensions": {
-          "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/datadog-catalog/v3/partials/extensions-defaults.schema.json"
+          "$ref": "https://raw.githubusercontent.com/shine-foundation/schema-collection/v1/json-schema/datadog-catalog/v3/partials/extensions-defaults.schema.json"
         },
         "metadata": {
           "type": "object",
@@ -80,7 +80,7 @@
       ]
     },
     {
-      "$ref": "https://raw.githubusercontent.com/ageras-com/schema-collection/v1/json-schema/datadog-catalog/v3/partials/tags-defaults.schema.json"
+      "$ref": "https://raw.githubusercontent.com/shine-foundation/schema-collection/v1/json-schema/datadog-catalog/v3/partials/tags-defaults.schema.json"
     }
   ]
 }
