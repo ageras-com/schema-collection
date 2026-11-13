@@ -18,7 +18,7 @@ jobs:
       id-token: write
       issues: write
       pull-requests: write
-    uses: shine-foundation/github-actions/.github/workflows/delivery__release-please.yml@4dbfff26e66848f1b984f70fd85f73c7832103bc # v1.15.0
+    uses: shine-foundation/github-actions/.github/workflows/delivery__release-please.yml@v1
     with:
       release-type: simple
       path: "."
